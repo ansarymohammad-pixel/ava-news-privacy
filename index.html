@@ -5,77 +5,226 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy - AVA News</title>
   <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #111827;
+      --muted: #5b6475;
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --border: #e5e7eb;
+    }
+
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      max-width: 860px;
-      margin: 40px auto;
-      padding: 0 20px;
       line-height: 1.6;
-      color: #1f2937;
-      background: #ffffff;
+      color: var(--text);
+      background: var(--bg);
     }
-    h1, h2 {
-      color: #111827;
+
+    header {
+      background: linear-gradient(135deg, #111827, #312e81);
+      color: white;
+      padding: 28px 20px;
     }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 16px;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .hero {
+      padding: 46px 0 28px;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      max-width: 720px;
+      color: #e5e7eb;
+      font-size: 18px;
+    }
+
+    main {
+      padding: 34px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--text);
+      font-size: 24px;
+    }
+
     p, li {
       font-size: 16px;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .label {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .notice {
+      border-left: 5px solid var(--primary);
+      background: #eef2ff;
+      padding: 16px 18px;
+      border-radius: 12px;
+      margin: 22px 0;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <h1>Privacy Policy for AVA News</h1>
-  <p><strong>Effective date:</strong> April 14, 2026</p>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">AVA Intelligence</div>
+        <div>
+          <a href="./index.html">Privacy Policy</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+      </nav>
 
-  <p>
-    AVA News provides headline analysis features designed to help users evaluate
-    news content using credibility, rhetoric, and risk indicators.
-  </p>
+      <section class="hero">
+        <h1>Privacy Policy for AVA News</h1>
+        <p>
+          AVA News provides headline analysis features designed to help users evaluate
+          news content using credibility, rhetoric, source transparency, and risk indicators.
+        </p>
+      </section>
+    </div>
+  </header>
 
-  <h2>Information We Process</h2>
-  <p>AVA News may process the following information:</p>
-  <ul>
-    <li>Text entered by the user for headline analysis</li>
-    <li>Technical request data required for app operation</li>
-    <li>Limited diagnostic information for reliability and security</li>
-  </ul>
+  <main class="container">
+    <section class="card">
+      <h2>Effective Date</h2>
+      <p><span class="label">Effective date:</span> April 14, 2026</p>
+    </section>
 
-  <h2>How We Use Information</h2>
-  <p>We use this information to:</p>
-  <ul>
-    <li>Analyze submitted headlines</li>
-    <li>Return credibility, rhetoric, and risk-related insights</li>
-    <li>Maintain, secure, and improve app performance</li>
-  </ul>
+    <section class="card">
+      <h2>Information We Process</h2>
+      <p>AVA News may process the following information:</p>
+      <ul>
+        <li>Text entered by the user for headline analysis</li>
+        <li>Technical request data required for app operation</li>
+        <li>Limited diagnostic information for reliability and security</li>
+        <li>News source or publisher information used for source transparency</li>
+      </ul>
+    </section>
 
-  <h2>Backend and Third-Party Services</h2>
-  <p>
-    AVA News may send user-submitted headline text to our backend service in order
-    to generate analysis results. The app may also rely on third-party infrastructure
-    or APIs, such as hosting providers and news-related services, to function properly.
-  </p>
+    <section class="card">
+      <h2>How We Use Information</h2>
+      <p>We use this information to:</p>
+      <ul>
+        <li>Analyze submitted headlines</li>
+        <li>Return credibility, rhetoric, and risk-related insights</li>
+        <li>Show source and publisher context where available</li>
+        <li>Maintain, secure, and improve app performance</li>
+      </ul>
+    </section>
 
-  <h2>Data Sharing</h2>
-  <p>
-    We do not sell personal data. Submitted text is used only for providing app
-    functionality and maintaining the service.
-  </p>
+    <section class="card">
+      <h2>Backend and Third-Party Services</h2>
+      <p>
+        AVA News may send user-submitted headline text to our backend service in order
+        to generate analysis results. The app may also rely on third-party infrastructure
+        or APIs, such as hosting providers and news-related services, to function properly.
+      </p>
+      <p>
+        AVA News may display or analyze headlines from third-party publishers and public
+        news sources. AVA News is not the original publisher of third-party articles.
+      </p>
+    </section>
 
-  <h2>Data Retention</h2>
-  <p>
-    We aim to keep processed data only as long as necessary for app functionality,
-    reliability, and security.
-  </p>
+    <section class="card">
+      <h2>Data Sharing</h2>
+      <p>
+        We do not sell personal data. Submitted text is used only for providing app
+        functionality, maintaining the service, and improving reliability.
+      </p>
+    </section>
 
-  <h2>Children’s Privacy</h2>
-  <p>
-    AVA News is not intended to knowingly collect personal information from children.
-  </p>
+    <section class="card">
+      <h2>Data Retention</h2>
+      <p>
+        We aim to keep processed data only as long as necessary for app functionality,
+        reliability, security, and legal compliance.
+      </p>
+    </section>
 
-  <h2>Contact</h2>
-  <p>
-    If you have questions about this Privacy Policy, contact:
-    <br />
-    <strong>support@avaintelligent.info</strong>
-  </p>
+    <section class="card">
+      <h2>Children's Privacy</h2>
+      <p>
+        AVA News is not intended to knowingly collect personal information from children.
+      </p>
+    </section>
+
+    <section class="notice">
+      <strong>Contact:</strong>
+      If you have questions about this Privacy Policy, app support, or content-related concerns,
+      contact us at
+      <a href="mailto:support@avaintelligent.info">support@avaintelligent.info</a>
+      or visit our
+      <a href="./contact.html">Contact page</a>.
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 AVA Intelligence. AVA News is a headline analysis and source transparency application.
+    </div>
+  </footer>
 </body>
 </html>
