@@ -677,6 +677,39 @@ main,
   color: #4a2300;
 }
 
+.operator-logo.eni {
+  background: linear-gradient(135deg, #111827, #f2b84b);
+}
+
+.operator-logo.q8 {
+  background: linear-gradient(135deg, #123c8c, #e5232f);
+}
+
+.operator-logo.ip {
+  background: linear-gradient(135deg, #0b3f38, #f2b84b);
+}
+
+.operator-logo.tamoil {
+  background: linear-gradient(135deg, #d90416, #111827);
+}
+
+.operator-logo.repsol {
+  background: linear-gradient(135deg, #f28a1a, #d9232e);
+}
+
+.operator-logo.cepsa {
+  background: linear-gradient(135deg, #e5232f, #8b1f2f);
+}
+
+.operator-logo.bp {
+  background: linear-gradient(135deg, #56b847, #f5d94e);
+  color: #0b3f38;
+}
+
+.operator-logo.galp {
+  background: linear-gradient(135deg, #f97316, #e5232f);
+}
+
 .source-link {
   color: var(--primary-dark);
   font-weight: 900;

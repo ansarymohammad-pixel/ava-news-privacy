@@ -59,16 +59,16 @@
           <p>Le tableau peut etre mis a jour selon le pays choisi par le client. Chaque ligne presente un operateur, sa source de donnees, la date exacte et le conseil AVA.</p>
         </div>
         <div class="table-controls" aria-label="Choix du pays pour les prix carburant">
-          <button class="active" type="button">France</button>
-          <button type="button">Italie</button>
-          <button type="button">Espagne</button>
+          <button class="active" type="button" data-fuel-country="france">France</button>
+          <button type="button" data-fuel-country="italy">Italie</button>
+          <button type="button" data-fuel-country="spain">Espagne</button>
         </div>
         <div class="price-table-wrap">
           <table class="price-table">
             <thead>
               <tr><th>Operateur</th><th>Pays</th><th>Date exacte</th><th>Source</th><th>SP95 / Euro 95</th><th>Diesel</th><th>Conseil AVA</th></tr>
             </thead>
-            <tbody>
+            <tbody data-fuel-table-body>
               <tr><td><span class="operator-logo totalenergies">te</span>TotalEnergies</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr / Roole Data</a></td><td>2.049 €</td><td>2.312 €</td><td>Diesel sous pression</td></tr>
               <tr><td><span class="operator-logo esso">E</span>Esso Express</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.061 €</td><td>2.298 €</td><td>Bon compromis</td></tr>
               <tr><td><span class="operator-logo carrefour">C</span>Carrefour</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.018 €</td><td>2.284 €</td><td>Meilleur SP95</td></tr>
@@ -128,6 +128,7 @@
     <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
   </footer>
   <script src="./network-background.js"></script>
+  <script src="./fuel-data.js"></script>
   <script src="./i18n.js"></script>
 </body>
 </html>
