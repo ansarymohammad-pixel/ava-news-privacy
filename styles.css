@@ -24,9 +24,28 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(47, 111, 237, 0.18), transparent 34%),
+    radial-gradient(circle at 82% 14%, rgba(242, 184, 75, 0.12), transparent 28%),
+    #07151d;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   line-height: 1.55;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(7, 21, 29, 0.08), rgba(247, 249, 252, 0.72) 58%, rgba(247, 249, 252, 0.96));
+}
+
+.network-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 a {
@@ -46,10 +65,16 @@ img {
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 20;
   border-bottom: 1px solid rgba(220, 229, 234, 0.78);
   background: rgba(247, 249, 252, 0.92);
   backdrop-filter: blur(16px);
+}
+
+main,
+.site-footer {
+  position: relative;
+  z-index: 2;
 }
 
 .nav {
@@ -163,11 +188,26 @@ img {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(110deg, rgba(9, 46, 41, 0.94), rgba(18, 107, 95, 0.78)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1400' height='780' viewBox='0 0 1400 780'%3E%3Crect width='1400' height='780' fill='%23111827'/%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.16' stroke-width='2'%3E%3Cpath d='M-80 560 C 210 420, 410 620, 700 472 S 1110 230, 1510 330'/%3E%3Cpath d='M-90 250 C 210 180, 430 300, 690 230 S 1120 80, 1480 180'/%3E%3Cpath d='M120 790 C 360 610, 600 715, 805 530 S 1120 380, 1430 430'/%3E%3C/g%3E%3Cg fill='%23ffffff' fill-opacity='.22'%3E%3Ccircle cx='210' cy='302' r='6'/%3E%3Ccircle cx='640' cy='458' r='6'/%3E%3Ccircle cx='992' cy='185' r='6'/%3E%3Ccircle cx='1110' cy='390' r='6'/%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(110deg, rgba(7, 21, 29, 0.92), rgba(9, 46, 41, 0.7) 52%, rgba(47, 111, 237, 0.36));
   background-size: cover;
   background-position: center;
   color: #ffffff;
+}
+
+.hero::after,
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 160px;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(247, 249, 252, 0.96));
+}
+
+.hero > *,
+.page-hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
@@ -367,10 +407,11 @@ img {
 
 .section {
   padding: 80px 0;
+  background: rgba(247, 249, 252, 0.96);
 }
 
 .section.alt {
-  background: var(--surface-2);
+  background: rgba(238, 244, 247, 0.96);
 }
 
 .section-head {
@@ -658,11 +699,12 @@ img {
 }
 
 .page-hero {
+  position: relative;
+  overflow: hidden;
   padding: 80px 0 54px;
   color: #ffffff;
   background:
-    linear-gradient(110deg, rgba(9, 46, 41, 0.96), rgba(47, 111, 237, 0.66)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1300' height='520' viewBox='0 0 1300 520'%3E%3Crect fill='%230d1b2a' width='1300' height='520'/%3E%3Cg stroke='%23fff' stroke-opacity='.13' fill='none'%3E%3Cpath d='M-20 410 L280 220 L520 300 L820 120 L1330 280' stroke-width='3'/%3E%3Cpath d='M80 120 L330 170 L610 80 L920 190 L1190 120' stroke-width='2'/%3E%3C/g%3E%3C/svg%3E");
+    linear-gradient(110deg, rgba(7, 21, 29, 0.94), rgba(9, 46, 41, 0.76) 52%, rgba(47, 111, 237, 0.44));
   background-size: cover;
   background-position: center;
 }
