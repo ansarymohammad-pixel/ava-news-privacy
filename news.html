@@ -41,18 +41,68 @@
     </section>
 
     <section class="section">
-      <div class="container feature-grid">
-        <article class="feature-card"><div class="feature-icon">AI</div><h3>Credibilite news</h3><p>Analyse du titre, du contenu, de la coherence et des indices de fiabilite.</p></article>
-        <article class="feature-card"><div class="feature-icon">%</div><h3>Score IA</h3><p>Resultat lisible avec un score global et des explications courtes.</p></article>
-        <article class="feature-card"><div class="feature-icon">!</div><h3>Detection rhetorique</h3><p>Identification des signaux emotionnels, sensationnalistes ou trop affirmatifs.</p></article>
+      <div class="container">
+        <div class="source-tabs" aria-label="AVA News modules">
+          <span>Analysis</span>
+          <span>Prediction</span>
+          <span class="active">Sources</span>
+          <span>Alerts</span>
+        </div>
+        <div class="source-architecture">
+          <div>
+            <p class="eyebrow">Source Architecture</p>
+            <h2>Reference source mix for transparency and context.</h2>
+            <p>AVA News compare les nouvelles avec des sources mainstream, instituts, agences officielles et analyses independantes avant de calculer la credibilite et l'impact probable.</p>
+          </div>
+          <div class="source-stats">
+            <div><span>Media</span><strong>24</strong></div>
+            <div><span>Institutes</span><strong>9</strong></div>
+            <div><span>State</span><strong>3</strong></div>
+          </div>
+          <div class="bias-bar" aria-label="Center 63%, Left 21%, Right 8%, Other 8%">
+            <span class="center" style="width: 63%"></span>
+            <span class="left" style="width: 21%"></span>
+            <span class="right" style="width: 8%"></span>
+            <span class="other" style="width: 8%"></span>
+          </div>
+          <div class="bias-list">
+            <div><i class="center"></i>Center <strong>63%</strong></div>
+            <div><i class="left"></i>Left <strong>21%</strong></div>
+            <div><i class="right"></i>Right <strong>8%</strong></div>
+            <div><i class="other"></i>Other <strong>8%</strong></div>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section alt">
-      <div class="container screens-grid">
-        <div class="screenshot"><div class="mini-screen"><h3>Score global</h3><div class="score-row"><strong>Credibilite</strong><span class="price">81/100</span></div><div class="meter"><span style="width: 81%"></span></div></div></div>
-        <div class="screenshot"><div class="mini-screen"><h3>Source</h3><div class="score-row"><strong>Transparence</strong><span class="price">Bonne</span></div><p>Source identifiee, contexte disponible.</p></div></div>
-        <div class="screenshot"><div class="mini-screen"><h3>Rhetorique</h3><div class="score-row"><strong>Signal</strong><span>Emotion forte</span></div><div class="score-row"><strong>Risque</strong><span class="price">Moyen</span></div></div></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Source Modules</p>
+          <h2>Un catalogue de sources pour verifier, comparer et contextualiser.</h2>
+          <p>Les sources de reference incluent les medias mainstream, les instituts, les agences officielles et les publications independantes.</p>
+        </div>
+        <div class="source-module-grid">
+          <article class="source-group">
+            <h3>Mainstream Media</h3>
+            <div class="source-card"><span class="source-logo cnn">CNN</span><div><strong>CNN</strong><small>mainstream media</small><b class="tag left">Left</b></div></div>
+            <div class="source-card"><span class="source-logo wsj">WSJ</span><div><strong>Wall Street Journal</strong><small>mainstream media</small><b class="tag center">Center</b></div></div>
+            <div class="source-card"><span class="source-logo bbc">BBC</span><div><strong>BBC</strong><small>mainstream media</small><b class="tag center">Center</b></div></div>
+            <div class="source-card"><span class="source-logo fox">FOX</span><div><strong>Fox News</strong><small>mainstream media</small><b class="tag right">Right</b></div></div>
+          </article>
+          <article class="source-group">
+            <h3>Institutes</h3>
+            <div class="source-card"><span class="source-logo ch">CH</span><div><strong>Chatham House</strong><small>institute</small><b class="tag center">Center</b></div></div>
+            <div class="source-card"><span class="source-logo br">BR</span><div><strong>Brookings</strong><small>institute</small><b class="tag left">Left</b></div></div>
+            <div class="source-card"><span class="source-logo csis">CSIS</span><div><strong>CSIS</strong><small>security analysis</small><b class="tag center">Center</b></div></div>
+          </article>
+          <article class="source-group">
+            <h3>State / Agency</h3>
+            <div class="source-card"><span class="source-logo xh">X</span><div><strong>Xinhua</strong><small>state agency</small><b class="tag state">State</b></div></div>
+            <div class="source-card"><span class="source-logo tass">T</span><div><strong>TASS</strong><small>state agency</small><b class="tag state">State</b></div></div>
+            <div class="source-card"><span class="source-logo ap">AP</span><div><strong>Associated Press</strong><small>wire agency</small><b class="tag center">Center</b></div></div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -64,6 +114,23 @@
           <p>Chaque nouvelle importante est transformee en score d'impact pour mesurer son influence probable sur les prix carburant, electricite et les meilleurs horaires d'utilisation.</p>
         </div>
         <a class="button primary" href="./ecosystem.html">Voir le modele d'impact</a>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Source Preview</p>
+          <h2>Preview des nouvelles utilisees pour transparence et impact.</h2>
+          <p>Chaque carte renvoie vers l'editeur original et indique le type de source avant de contribuer au score d'impact AVA.</p>
+        </div>
+        <div class="publisher-list">
+          <article><strong>Publisher: Reuters</strong><p>Oil markets react to rising tensions around the Strait of Hormuz</p><span>Third-party source: Mainstream - Tap to open original publisher</span></article>
+          <article><strong>Publisher: BBC</strong><p>Regional leaders push for diplomacy after Iran warning</p><span>Third-party source: Mainstream - Tap to open original publisher</span></article>
+          <article><strong>Publisher: AP</strong><p>EU sanctions package targets Russian oil exports</p><span>Third-party source: Mainstream - Tap to open original publisher</span></article>
+          <article><strong>Publisher: Bloomberg</strong><p>Energy traders watch supply disruption risks in the Gulf</p><span>Third-party source: Mainstream - Tap to open original publisher</span></article>
+          <article><strong>Publisher: CSIS</strong><p>Security analysts assess risks of a wider regional conflict</p><span>Third-party source: Institute - Tap to open original publisher</span></article>
+        </div>
       </div>
     </section>
   </main>
