@@ -591,6 +591,11 @@ main,
   border-bottom: 1px solid var(--line);
 }
 
+.price-table td:first-child {
+  white-space: nowrap;
+  font-weight: 850;
+}
+
 .price-table th {
   color: var(--primary-dark);
   background: #eaf4f1;
@@ -600,6 +605,137 @@ main,
 
 .price-table tr:last-child td {
   border-bottom: 0;
+}
+
+.station-brand {
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  margin-right: 10px;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 950;
+  vertical-align: middle;
+}
+
+.station-brand.total {
+  background: linear-gradient(135deg, #e03030, #1954a6);
+}
+
+.station-brand.esso {
+  background: linear-gradient(135deg, #d91f2b, #f2f5ff);
+  color: #12316f;
+}
+
+.station-brand.carrefour {
+  background: linear-gradient(135deg, #0a55a3, #e51b3e);
+}
+
+.station-brand.shell {
+  background: linear-gradient(135deg, #f7cf34, #d9232e);
+  color: #4a2300;
+}
+
+.chart-panel {
+  margin-top: 22px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.chart-head h3 {
+  margin: 0;
+}
+
+.chart-head span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.fuel-chart {
+  overflow-x: auto;
+}
+
+.fuel-chart svg {
+  width: 100%;
+  min-width: 680px;
+  height: auto;
+}
+
+.grid-lines line {
+  stroke: #dce5ea;
+  stroke-width: 1;
+}
+
+.axis-labels text {
+  fill: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.line {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.line.sp95 {
+  stroke: #126b5f;
+}
+
+.line.sp98 {
+  stroke: #2f6fed;
+}
+
+.line.diesel {
+  stroke: #f2b84b;
+}
+
+.sp95-fill {
+  background: #126b5f;
+  fill: #126b5f;
+}
+
+.sp98-fill {
+  background: #2f6fed;
+  fill: #2f6fed;
+}
+
+.diesel-fill {
+  background: #f2b84b;
+  fill: #f2b84b;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.chart-legend i {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  margin-right: 7px;
+  border-radius: 999px;
 }
 
 .appliance-grid {
