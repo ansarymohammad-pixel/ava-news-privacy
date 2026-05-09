@@ -578,6 +578,30 @@ main,
   box-shadow: var(--shadow);
 }
 
+.table-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 16px;
+}
+
+.table-controls button {
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--primary-dark);
+  background: #ffffff;
+  font: inherit;
+  font-weight: 850;
+}
+
+.table-controls button.active {
+  color: #ffffff;
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
 .price-table {
   width: 100%;
   min-width: 720px;
@@ -605,6 +629,52 @@ main,
 
 .price-table tr:last-child td {
   border-bottom: 0;
+}
+
+.operator-logo {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  margin-right: 10px;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 950;
+  vertical-align: middle;
+}
+
+.operator-logo.totalenergies {
+  position: relative;
+  overflow: hidden;
+  color: transparent;
+  background:
+    radial-gradient(circle at 64% 24%, #1d8cff 0 21%, transparent 22%),
+    radial-gradient(circle at 65% 67%, #f4d21c 0 20%, transparent 21%),
+    linear-gradient(135deg, #f60808 0 38%, #f35f16 48%, #2d64ff 76%, #6c45f2);
+}
+
+.operator-logo.totalenergies::before {
+  content: "te";
+  position: absolute;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 950;
+  letter-spacing: -1px;
+}
+
+.operator-logo.esso {
+  background: linear-gradient(135deg, #d91f2b, #f2f5ff);
+  color: #12316f;
+}
+
+.operator-logo.carrefour {
+  background: linear-gradient(135deg, #0a55a3, #e51b3e);
+}
+
+.operator-logo.shell {
+  background: linear-gradient(135deg, #f7cf34, #d9232e);
+  color: #4a2300;
 }
 
 .source-link {

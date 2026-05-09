@@ -55,18 +55,24 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Prix essence</p>
-          <h2>Comparer les prix carburant par pays.</h2>
-          <p>Pour une vue internationale, la colonne distance est remplacee par l'operateur ou la source de donnees. Les dates indiquent la derniere mise a jour disponible pour chaque pays.</p>
+          <h2>Comparer les prix carburant par operateur.</h2>
+          <p>Le tableau peut etre mis a jour selon le pays choisi par le client. Chaque ligne presente un operateur, sa source de donnees, la date exacte et le conseil AVA.</p>
+        </div>
+        <div class="table-controls" aria-label="Choix du pays pour les prix carburant">
+          <button class="active" type="button">France</button>
+          <button type="button">Italie</button>
+          <button type="button">Espagne</button>
         </div>
         <div class="price-table-wrap">
           <table class="price-table">
             <thead>
-              <tr><th>Pays</th><th>Date exacte</th><th>Operateur / source</th><th>SP95 / Euro 95</th><th>Diesel</th><th>Conseil AVA</th></tr>
+              <tr><th>Operateur</th><th>Pays</th><th>Date exacte</th><th>Source</th><th>SP95 / Euro 95</th><th>Diesel</th><th>Conseil AVA</th></tr>
             </thead>
             <tbody>
-              <tr><td><span class="station-brand france">FR</span>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr / Roole Data</a></td><td>2.049 €</td><td>2.312 €</td><td>Diesel sous pression</td></tr>
-              <tr><td><span class="station-brand italy">IT</span>Italie</td><td>06/04/2026</td><td><a class="source-link" href="https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en" target="_blank" rel="noopener">European Commission Oil Bulletin</a></td><td>1.762 €</td><td>2.092 €</td><td>Diesel eleve</td></tr>
-              <tr><td><span class="station-brand spain">ES</span>Espagne</td><td>13/04/2026</td><td><a class="source-link" href="https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en" target="_blank" rel="noopener">European Commission Oil Bulletin</a></td><td>1.552 €</td><td>1.885 €</td><td>Euro 95 competitif</td></tr>
+              <tr><td><span class="operator-logo totalenergies">te</span>TotalEnergies</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr / Roole Data</a></td><td>2.049 €</td><td>2.312 €</td><td>Diesel sous pression</td></tr>
+              <tr><td><span class="operator-logo esso">E</span>Esso Express</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.061 €</td><td>2.298 €</td><td>Bon compromis</td></tr>
+              <tr><td><span class="operator-logo carrefour">C</span>Carrefour</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.018 €</td><td>2.284 €</td><td>Meilleur SP95</td></tr>
+              <tr><td><span class="operator-logo shell">S</span>Shell</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.087 €</td><td>2.330 €</td><td>Prix premium</td></tr>
             </tbody>
           </table>
         </div>
@@ -88,15 +94,16 @@
                 <text x="16" y="99">2.10</text>
                 <text x="16" y="154">1.85</text>
                 <text x="16" y="209">1.60</text>
-                <text x="112" y="252">France</text>
-                <text x="330" y="252">Italie</text>
-                <text x="554" y="252">Espagne</text>
+                <text x="86" y="252">Total</text>
+                <text x="245" y="252">Esso</text>
+                <text x="400" y="252">Carrefour</text>
+                <text x="585" y="252">Shell</text>
               </g>
-              <polyline class="line sp95" points="140,106 360,169 580,215"></polyline>
-              <polyline class="line diesel" points="140,48 360,96 580,142"></polyline>
+              <polyline class="line sp95" points="100,106 280,101 460,115 640,92"></polyline>
+              <polyline class="line diesel" points="100,48 280,52 460,57 640,40"></polyline>
               <g class="chart-dots">
-                <circle class="sp95-fill" cx="140" cy="106" r="5"></circle><circle class="sp95-fill" cx="360" cy="169" r="5"></circle><circle class="sp95-fill" cx="580" cy="215" r="5"></circle>
-                <circle class="diesel-fill" cx="140" cy="48" r="5"></circle><circle class="diesel-fill" cx="360" cy="96" r="5"></circle><circle class="diesel-fill" cx="580" cy="142" r="5"></circle>
+                <circle class="sp95-fill" cx="100" cy="106" r="5"></circle><circle class="sp95-fill" cx="280" cy="101" r="5"></circle><circle class="sp95-fill" cx="460" cy="115" r="5"></circle><circle class="sp95-fill" cx="640" cy="92" r="5"></circle>
+                <circle class="diesel-fill" cx="100" cy="48" r="5"></circle><circle class="diesel-fill" cx="280" cy="52" r="5"></circle><circle class="diesel-fill" cx="460" cy="57" r="5"></circle><circle class="diesel-fill" cx="640" cy="40" r="5"></circle>
               </g>
             </svg>
           </div>
