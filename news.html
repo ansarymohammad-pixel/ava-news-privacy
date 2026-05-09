@@ -72,6 +72,12 @@
             <div><i class="other"></i>Other <strong>8%</strong></div>
           </div>
         </div>
+        <div class="color-code-grid">
+          <article><i class="center"></i><strong>Center</strong><span>Source generalement factuelle ou institutionnelle.</span></article>
+          <article><i class="left"></i><strong>Left</strong><span>Source avec tendance editoriale gauche ou progressiste.</span></article>
+          <article><i class="right"></i><strong>Right</strong><span>Source avec tendance editoriale droite ou conservatrice.</span></article>
+          <article><i class="other"></i><strong>Other / State</strong><span>Agence publique, source etatique ou signal non classe.</span></article>
+        </div>
       </div>
     </section>
 
@@ -103,6 +109,26 @@
             <div class="source-card"><span class="source-logo ap">AP</span><div><strong>Associated Press</strong><small>wire agency</small><b class="tag center">Center</b></div></div>
           </article>
         </div>
+        <div class="source-data-panel">
+          <h3>Data view</h3>
+          <div class="price-table-wrap">
+            <table class="price-table source-data-table">
+              <thead>
+                <tr><th>Source</th><th>Type</th><th>Bias</th><th>Reputation</th><th>Usage AVA</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Reuters</td><td>Mainstream</td><td><span class="mini-badge center">Center</span></td><td>0.95</td><td>Breaking energy / geopolitics</td></tr>
+                <tr><td>BBC</td><td>Mainstream</td><td><span class="mini-badge center">Center</span></td><td>0.90</td><td>Regional context</td></tr>
+                <tr><td>Bloomberg</td><td>Mainstream</td><td><span class="mini-badge center">Center</span></td><td>0.92</td><td>Markets and energy traders</td></tr>
+                <tr><td>Wall Street Journal</td><td>Mainstream</td><td><span class="mini-badge center">Center</span></td><td>0.88</td><td>Economic signal</td></tr>
+                <tr><td>Chatham House</td><td>Institute</td><td><span class="mini-badge center">Center</span></td><td>0.86</td><td>Geopolitical analysis</td></tr>
+                <tr><td>Brookings</td><td>Institute</td><td><span class="mini-badge left">Left</span></td><td>0.82</td><td>Policy analysis</td></tr>
+                <tr><td>Xinhua</td><td>State / Agency</td><td><span class="mini-badge state">State</span></td><td>0.62</td><td>State perspective</td></tr>
+                <tr><td>TASS</td><td>State / Agency</td><td><span class="mini-badge state">State</span></td><td>0.58</td><td>State perspective</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -120,9 +146,39 @@
     <section class="section alt">
       <div class="container">
         <div class="section-head">
+          <p class="eyebrow">Latest News Signals</p>
+          <h2>Montrer les nouvelles directement dans AVA News.</h2>
+          <p>Chaque nouvelle peut afficher son editeur, son type de source, son biais, son score de credibilite et son impact probable sur carburant ou electricite.</p>
+        </div>
+        <div class="news-signal-grid">
+          <article class="news-signal-card impact-high">
+            <div class="news-meta"><span>Reuters</span><b>Impact high</b></div>
+            <h3>Oil markets react to rising tensions around the Strait of Hormuz</h3>
+            <p>Signal probable : hausse carburant si le risque maritime persiste.</p>
+            <div class="news-tags"><span class="mini-badge center">Center</span><span>credibility 0.95</span><span>fuel +</span></div>
+          </article>
+          <article class="news-signal-card impact-medium">
+            <div class="news-meta"><span>Bloomberg</span><b>Impact medium</b></div>
+            <h3>Energy traders watch supply disruption risks in the Gulf</h3>
+            <p>Signal probable : volatilite carburant et electricite selon gaz et petrole.</p>
+            <div class="news-tags"><span class="mini-badge center">Center</span><span>credibility 0.92</span><span>fuel +</span></div>
+          </article>
+          <article class="news-signal-card impact-low">
+            <div class="news-meta"><span>BBC</span><b>Impact low</b></div>
+            <h3>Regional leaders push for diplomacy after Iran warning</h3>
+            <p>Signal probable : risque attenue si la diplomatie reduit les tensions.</p>
+            <div class="news-tags"><span class="mini-badge center">Center</span><span>credibility 0.90</span><span>risk -</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
           <p class="eyebrow">Source Preview</p>
-          <h2>Preview des nouvelles utilisees pour transparence et impact.</h2>
-          <p>Chaque carte renvoie vers l'editeur original et indique le type de source avant de contribuer au score d'impact AVA.</p>
+          <h2>Preview des publishers originaux.</h2>
+          <p>Ces lignes montrent la forme simple d'une liste RSS/API : publisher, titre, source tierce et lien vers l'editeur original.</p>
         </div>
         <div class="publisher-list">
           <article><strong>Publisher: Reuters</strong><p>Oil markets react to rising tensions around the Strait of Hormuz</p><span>Third-party source: Mainstream - Tap to open original publisher</span></article>
