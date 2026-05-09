@@ -363,6 +363,10 @@
       en: ["AVA Fuel - Fuel comparison and price prediction", "AVA Fuel compares fuel prices, displays stations on a map, and predicts price changes."],
       es: ["AVA Fuel - Comparacion de combustible y prediccion de precios", "AVA Fuel compara precios de combustible, muestra estaciones en un mapa y predice cambios de precio."]
     },
+    "ecosystem.html": {
+      en: ["AVA Ecosystem - News verification and price prediction", "AVA Ecosystem connects verified news to fuel and electricity price prediction through an impact score."],
+      es: ["AVA Ecosystem - Verificacion de noticias y prediccion de precios", "AVA Ecosystem conecta noticias verificadas con predicciones de combustible y electricidad mediante un score de impacto."]
+    },
     "electricity.html": {
       en: ["AVA ElectricityCost - Electricity planning and kWh cost", "AVA ElectricityCost helps plan home appliances based on electricity prices and estimate kWh costs."],
       es: ["AVA ElectricityCost - Planificacion electrica y coste kWh", "AVA ElectricityCost ayuda a planificar electrodomesticos segun precios de electricidad y estimar costes kWh."]

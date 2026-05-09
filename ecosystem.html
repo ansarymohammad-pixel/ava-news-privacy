@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVA Ecosystem relie la verification des news aux predictions carburant et electricite avec un score d'impact." />
+  <title>AVA Ecosystem - News verification and price prediction</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html"><span class="brand-mark">AVA</span><span>AVA Intelligence</span></a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a class="active" href="./ecosystem.html">AVA Ecosystem</a>
+        <a href="./fuel.html">AVA Fuel</a>
+        <a href="./electricity.html">AVA ElectricityCost</a>
+        <a href="./parking.html">AVA Parking</a>
+        <a href="./news.html">AVA News Verify</a>
+        <a href="./contact.html">Contact</a>
+        <div class="language-switcher" aria-label="Choix de langue">
+          <label class="sr-only" for="language-select">Langue</label>
+          <select id="language-select" data-language-select>
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">AVA Ecosystem</p>
+        <h1>Des nouvelles verifiees aux decisions optimales.</h1>
+        <p>AVA News analyse chaque jour les evenements energie, petrole, geopolitique, meteo, greves et taxes. Les signaux fiables alimentent ensuite AVA Fuel et AVA ElectricityCost pour anticiper les hausses, les baisses et les meilleurs horaires.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="ecosystem-flow">
+          <article class="flow-card">
+            <span>1</span>
+            <h3>Collecte AVA News</h3>
+            <p>RSS et APIs suivent energie, petrole, geopolitique, meteo, greves, taxes, transport et reseau.</p>
+          </article>
+          <article class="flow-card">
+            <span>2</span>
+            <h3>Verification</h3>
+            <p>Score de credibilite, reputation de source, fraicheur, importance et signaux rhetoriques.</p>
+          </article>
+          <article class="flow-card">
+            <span>3</span>
+            <h3>Impact probable</h3>
+            <p>AVA extrait le sens marche : pression hausse, pression baisse, incertitude ou impact faible.</p>
+          </article>
+          <article class="flow-card">
+            <span>4</span>
+            <h3>Prediction</h3>
+            <p>Fuel et ElectricityCost combinent prix reels, historique, news verifiees et sensibilite marche.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Impact Score</p>
+          <h2>Une formule simple, explicable et evolutive.</h2>
+          <p>Chaque signal est ramene entre 0 et 1. Le score final montre si une nouvelle doit influencer fortement une prediction ou rester un signal faible.</p>
+        </div>
+        <div class="formula-panel">
+          <code>impact_score = credibility_score x source_reputation x topic_relevance x freshness x market_sensitivity</code>
+        </div>
+        <div class="score-grid">
+          <article class="score-card"><strong>0.92</strong><span>credibility_score</span><p>News confirmee par plusieurs sources fiables.</p></article>
+          <article class="score-card"><strong>0.88</strong><span>source_reputation</span><p>Source reconnue dans energie, economie ou geopolitique.</p></article>
+          <article class="score-card"><strong>0.95</strong><span>topic_relevance</span><p>Sujet directement lie au petrole, gaz, electricite ou taxes.</p></article>
+          <article class="score-card"><strong>0.82</strong><span>freshness</span><p>Information recente et encore exploitable pour la prediction.</p></article>
+          <article class="score-card"><strong>0.90</strong><span>market_sensitivity</span><p>Marche historiquement sensible a ce type d'evenement.</p></article>
+        </div>
+        <div class="impact-result">
+          <div>
+            <span>Score exemple</span>
+            <strong>0.57</strong>
+          </div>
+          <p>Interpretation AVA : signal important. La nouvelle peut augmenter le poids de prediction pour carburant ou electricite, mais elle doit rester combinee aux prix reels et a l'historique.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container signal-grid">
+        <article class="signal-card">
+          <h3>Signal vers AVA Fuel</h3>
+          <p>Exemple : tension geopolitique + Brent en hausse + source fiable.</p>
+          <div class="signal-row"><span>Impact news</span><strong>Fort</strong></div>
+          <div class="signal-row"><span>Tendance probable</span><strong>Hausse carburant</strong></div>
+          <div class="signal-row"><span>Horizon</span><strong>24-72 h</strong></div>
+        </article>
+        <article class="signal-card">
+          <h3>Signal vers AVA ElectricityCost</h3>
+          <p>Exemple : meteo froide + faible vent + tension reseau.</p>
+          <div class="signal-row"><span>Impact news</span><strong>Moyen</strong></div>
+          <div class="signal-row"><span>Tendance probable</span><strong>Pic prix soir</strong></div>
+          <div class="signal-row"><span>Action</span><strong>Decaler appareils</strong></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="content">
+          <h2>Sources a connecter</h2>
+          <ul>
+            <li>News : RSS de sources reconnues, NewsAPI, GDELT, agences presse, medias economie/energie.</li>
+            <li>Carburant : prix officiels carburants, coordonnees stations, historique local.</li>
+            <li>Electricite : ENTSO-E day-ahead, meteo, donnees reseau, prix par bidding zone.</li>
+            <li>Modele : scoring explicable aujourd'hui, puis apprentissage supervise quand l'historique devient suffisant.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
+  </footer>
+  <script src="./network-background.js"></script>
+  <script src="./i18n.js"></script>
+</body>
+</html>

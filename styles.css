@@ -774,6 +774,155 @@ main,
   font-size: 22px;
 }
 
+.ecosystem-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 24px;
+}
+
+.ecosystem-flow {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.flow-card,
+.score-card,
+.signal-card,
+.formula-panel,
+.impact-result {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.flow-card {
+  position: relative;
+  padding: 24px;
+}
+
+.flow-card span {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--primary-dark);
+  font-weight: 950;
+}
+
+.flow-card h3,
+.signal-card h3 {
+  margin: 16px 0 8px;
+}
+
+.flow-card p,
+.signal-card p,
+.score-card p,
+.impact-result p {
+  color: var(--muted);
+}
+
+.formula-panel {
+  padding: 22px;
+  margin-bottom: 18px;
+  overflow-x: auto;
+}
+
+.formula-panel code {
+  color: var(--primary-dark);
+  font-size: 18px;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.score-card {
+  padding: 18px;
+}
+
+.score-card strong {
+  display: block;
+  color: var(--primary);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.score-card span {
+  display: block;
+  margin-top: 8px;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.score-card p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.impact-result {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+  margin-top: 18px;
+  padding: 22px;
+  background: #0b3f38;
+  color: #ffffff;
+}
+
+.impact-result span {
+  display: block;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.impact-result strong {
+  font-size: 54px;
+  line-height: 1;
+}
+
+.impact-result p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.signal-card {
+  padding: 24px;
+}
+
+.signal-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.signal-row span {
+  color: var(--muted);
+}
+
+.signal-row strong {
+  color: var(--primary-dark);
+}
+
 .screenshot {
   min-height: 360px;
   padding: 18px;
@@ -928,13 +1077,18 @@ main,
   .feature-grid,
   .trust-grid,
   .screens-grid,
+  .ecosystem-flow,
+  .score-grid,
+  .signal-grid,
   .appliance-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
 
   .product-grid.four,
-  .page-hero-grid {
+  .page-hero-grid,
+  .ecosystem-preview,
+  .impact-result {
     grid-template-columns: 1fr;
   }
 }
