@@ -1,0 +1,80 @@
+.fuel-workflow {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-bottom: 26px;
+}
+
+.workflow-copy,
+.workflow-steps article {
+  border: 1px solid #dce5ea;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.08);
+}
+
+.workflow-copy {
+  padding: 28px;
+}
+
+.workflow-copy h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.06;
+}
+
+.workflow-copy p:not(.eyebrow) {
+  color: #5f6c7b;
+  font-size: 17px;
+}
+
+.workflow-steps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.workflow-steps article {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+}
+
+.workflow-steps article::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  right: -34px;
+  bottom: -42px;
+  border-radius: 50%;
+  background: rgba(18, 107, 95, 0.08);
+}
+
+.workflow-steps span {
+  color: #f2b84b;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.workflow-steps strong {
+  display: block;
+  margin-top: 8px;
+  color: #101828;
+  font-size: 21px;
+}
+
+.workflow-steps small {
+  display: block;
+  margin-top: 6px;
+  color: #5f6c7b;
+  font-size: 14px;
+}
+
+@media (max-width: 880px) {
+  .fuel-workflow,
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+}
