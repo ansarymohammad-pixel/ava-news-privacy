@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AVA ElectricityCost aide a planifier les appareils domestiques selon les prix de l'electricite et a estimer le cout en kWh." />
+  <title>AVA ElectricityCost - Planification electricite et cout kWh</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html"><span class="brand-mark">AVA</span><span>AVA Intelligence</span></a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="./index.html">Accueil</a>
+        <a href="./fuel.html">AVA Fuel</a>
+        <a class="active" href="./electricity.html">AVA ElectricityCost</a>
+        <a href="./parking.html">AVA Parking</a>
+        <a href="./news.html">AVA News Verify</a>
+        <a href="./contact.html">Contact</a>
+        <div class="language-switcher" aria-label="Choix de langue">
+          <label class="sr-only" for="language-select">Langue</label>
+          <select id="language-select" data-language-select>
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">AVA ElectricityCost</p>
+          <h1>Planifier les appareils quand l'electricite coute moins cher.</h1>
+          <p>AVA ElectricityCost aide a choisir le meilleur moment pour lancer lave-linge, lave-vaisselle, aspirateur, four, climatisation ou radiateur electrique selon les prix de l'electricite.</p>
+          <div class="hero-actions">
+            <a class="store-button" href="./contact.html"><span><span class="store-small">Acces beta</span><span class="store-main">Demander le lien</span></span></a>
+          </div>
+        </div>
+        <div class="hero-logo-card">
+          <div class="app-logo electricity-logo large"><span>AVA</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-grid">
+        <article class="feature-card"><div class="feature-icon">24h</div><h3>Prix sur 24 heures</h3><p>Voir les prix electricite a venir et choisir le pays ou la bidding zone adaptee.</p></article>
+        <article class="feature-card"><div class="feature-icon">kW</div><h3>Puissance appareil</h3><p>Entrer la puissance en kW, la duree d'utilisation et la limite de puissance du contrat.</p></article>
+        <article class="feature-card"><div class="feature-icon">€</div><h3>Cout estime</h3><p>Comparer les horaires manuels et automatiques pour reduire le cout estime.</p></article>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Prix electricite</p>
+          <h2>Exemple de prix pour les prochaines heures.</h2>
+          <p>Ces donnees sont des exemples d'interface. Elles peuvent etre branchees plus tard sur une source de prix electricite par pays ou zone.</p>
+        </div>
+        <div class="price-table-wrap">
+          <table class="price-table">
+            <thead>
+              <tr><th>Heure</th><th>Prix</th><th>Signal</th><th>Recommandation AVA</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>06:00</td><td>0.19 €/kWh</td><td>Moyen</td><td>Attendre si possible</td></tr>
+              <tr><td>10:00</td><td>0.24 €/kWh</td><td>Eleve</td><td>Eviter gros appareils</td></tr>
+              <tr><td>14:00</td><td>0.13 €/kWh</td><td>Bas</td><td>Bon moment</td></tr>
+              <tr><td>22:00</td><td>0.12 €/kWh</td><td>Tres bas</td><td>Meilleur choix</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container appliance-grid">
+        <article class="appliance-card"><span>WM</span><strong>Lave-linge</strong><small>2.0 kW - 1.5 h</small><b>0.36 €</b></article>
+        <article class="appliance-card"><span>DW</span><strong>Lave-vaisselle</strong><small>1.8 kW - 1.3 h</small><b>0.28 €</b></article>
+        <article class="appliance-card"><span>OV</span><strong>Four</strong><small>2.4 kW - 1.0 h</small><b>0.29 €</b></article>
+        <article class="appliance-card"><span>AC</span><strong>Climatisation</strong><small>1.2 kW - 3.0 h</small><b>0.43 €</b></article>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="content">
+          <h2>Formule de calcul</h2>
+          <p><strong>Cout = energie consommee x prix par kWh</strong></p>
+          <p>Exemple : si un appareil utilise 2 kW pendant 1.5 heure, il consomme 3 kWh. Si le prix electricite est 0.18 €/kWh, le cout estime est 0.54 €.</p>
+        </div>
+        <div class="content">
+          <h2>Fonctionnalites principales</h2>
+          <ul>
+            <li>Selection du pays ou de la bidding zone.</li>
+            <li>Profils utilisateurs, appareils favoris, historique et recommandations sauvegardees.</li>
+            <li>Comparaison entre suggestion automatique, horaire de debut manuel et horaire de fin manuel.</li>
+            <li>Risque possible de depassement de puissance contrat.</li>
+          </ul>
+        </div>
+        <div class="content">
+          <h2>Important</h2>
+          <p>AVA ElectricityCost est un outil de planification et d'estimation. Les prix, couts et economies reels peuvent varier selon le fournisseur, le tarif, les taxes, le contrat et la consommation reelle de l'appareil.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
+  </footer>
+  <script src="./i18n.js"></script>
+</body>
+</html>

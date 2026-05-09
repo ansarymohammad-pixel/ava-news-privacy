@@ -403,6 +403,10 @@ img {
   gap: 18px;
 }
 
+.product-grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .product-card,
 .feature-card,
 .trust-card,
@@ -441,6 +445,156 @@ img {
   margin-top: 10px;
   color: var(--primary-dark);
   font-weight: 900;
+}
+
+.app-logo {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  font-weight: 950;
+  box-shadow: 0 16px 34px rgba(16, 24, 40, 0.16);
+}
+
+.app-logo.large {
+  width: min(280px, 80vw);
+  height: min(280px, 80vw);
+  border-radius: 46px;
+  font-size: 48px;
+}
+
+.fuel-logo {
+  background: linear-gradient(135deg, #0b3f38, #19a184);
+}
+
+.electricity-logo {
+  background:
+    radial-gradient(circle at 50% 34%, rgba(39, 223, 193, 0.86), transparent 28%),
+    linear-gradient(135deg, #061936, #092b56 45%, #0b3f38);
+  position: relative;
+  overflow: hidden;
+}
+
+.electricity-logo::before {
+  content: "";
+  position: absolute;
+  width: 58%;
+  height: 58%;
+  border: 8px solid #f5d94e;
+  border-left-color: #8bdc56;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  top: 16%;
+}
+
+.electricity-logo::after {
+  content: "";
+  position: absolute;
+  width: 66%;
+  height: 20%;
+  bottom: 28%;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+.electricity-logo span {
+  position: relative;
+  z-index: 1;
+  align-self: end;
+  margin-bottom: 10px;
+  color: #82f0c6;
+}
+
+.parking-logo {
+  background: linear-gradient(135deg, #2f6fed, #18a17f);
+}
+
+.news-logo {
+  background:
+    radial-gradient(circle at 50% 24%, rgba(47, 111, 237, 0.86), transparent 24%),
+    linear-gradient(135deg, #04070f, #0b1d3a 48%, #b32222);
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  align-items: center;
+  gap: 34px;
+}
+
+.hero-logo-card {
+  display: grid;
+  place-items: center;
+}
+
+.price-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.price-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.price-table th,
+.price-table td {
+  padding: 15px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-table th {
+  color: var(--primary-dark);
+  background: #eaf4f1;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.price-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.appliance-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.appliance-card {
+  display: grid;
+  gap: 8px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.appliance-card span {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: var(--primary-dark);
+  font-weight: 900;
+}
+
+.appliance-card small {
+  color: var(--muted);
+}
+
+.appliance-card b {
+  color: var(--primary);
+  font-size: 22px;
 }
 
 .screenshot {
@@ -596,7 +750,13 @@ img {
   .feature-grid,
   .trust-grid,
   .screens-grid,
+  .appliance-grid,
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid.four,
+  .page-hero-grid {
     grid-template-columns: 1fr;
   }
 }
