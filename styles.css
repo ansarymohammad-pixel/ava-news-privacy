@@ -607,6 +607,21 @@ main,
   border-bottom: 0;
 }
 
+.station-brand.france {
+  background: linear-gradient(135deg, #21468b, #ffffff 52%, #ae1c28);
+  color: #07151d;
+}
+
+.station-brand.italy {
+  background: linear-gradient(135deg, #008c45, #f4f5f0 52%, #cd212a);
+  color: #07151d;
+}
+
+.station-brand.spain {
+  background: linear-gradient(135deg, #aa151b, #f1bf00 52%, #aa151b);
+  color: #07151d;
+}
+
 .station-brand {
   width: 34px;
   height: 34px;
@@ -636,6 +651,21 @@ main,
 .station-brand.shell {
   background: linear-gradient(135deg, #f7cf34, #d9232e);
   color: #4a2300;
+}
+
+.station-brand.france {
+  background: linear-gradient(135deg, #21468b, #ffffff 52%, #ae1c28);
+  color: #07151d;
+}
+
+.station-brand.italy {
+  background: linear-gradient(135deg, #008c45, #f4f5f0 52%, #cd212a);
+  color: #07151d;
+}
+
+.station-brand.spain {
+  background: linear-gradient(135deg, #aa151b, #f1bf00 52%, #aa151b);
+  color: #07151d;
 }
 
 .chart-panel {

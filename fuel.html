@@ -55,29 +55,28 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Prix essence</p>
-          <h2>Comparer rapidement les carburants proches.</h2>
-          <p>Ces valeurs sont des exemples de presentation. Elles peuvent etre connectees plus tard a une API de prix carburant. La distance est calculee depuis la position GPS de l'utilisateur vers la station, puis peut etre affinee avec la distance routiere si une API de cartographie est connectee.</p>
+          <h2>Comparer les prix carburant par pays.</h2>
+          <p>Pour une vue internationale, la colonne distance est remplacee par l'operateur ou la source de donnees. Les dates indiquent la derniere mise a jour disponible pour chaque pays.</p>
         </div>
         <div class="price-table-wrap">
           <table class="price-table">
             <thead>
-              <tr><th>Station</th><th>Distance</th><th>SP95</th><th>SP98</th><th>Diesel</th><th>Conseil AVA</th></tr>
+              <tr><th>Pays</th><th>Date exacte</th><th>Operateur / source</th><th>SP95 / Euro 95</th><th>Diesel</th><th>Conseil AVA</th></tr>
             </thead>
             <tbody>
-              <tr><td><span class="station-brand total">TA</span>Total Access</td><td>2.1 km</td><td>1.72 €</td><td>1.86 €</td><td>1.64 €</td><td>Meilleur diesel</td></tr>
-              <tr><td><span class="station-brand esso">E</span>Esso Express</td><td>3.4 km</td><td>1.75 €</td><td>1.89 €</td><td>1.66 €</td><td>Bon compromis</td></tr>
-              <tr><td><span class="station-brand carrefour">C</span>Carrefour</td><td>4.2 km</td><td>1.70 €</td><td>1.84 €</td><td>1.68 €</td><td>Meilleur SP95</td></tr>
-              <tr><td><span class="station-brand shell">S</span>Shell</td><td>1.6 km</td><td>1.79 €</td><td>1.94 €</td><td>1.71 €</td><td>Plus proche</td></tr>
+              <tr><td><span class="station-brand france">FR</span>France</td><td>15/04/2026</td><td>data.gouv.fr / Roole Data</td><td>2.049 €</td><td>2.312 €</td><td>Diesel sous pression</td></tr>
+              <tr><td><span class="station-brand italy">IT</span>Italie</td><td>06/04/2026</td><td>European Commission Oil Bulletin</td><td>1.762 €</td><td>2.092 €</td><td>Diesel eleve</td></tr>
+              <tr><td><span class="station-brand spain">ES</span>Espagne</td><td>13/04/2026</td><td>European Commission Oil Bulletin</td><td>1.552 €</td><td>1.885 €</td><td>Euro 95 competitif</td></tr>
             </tbody>
           </table>
         </div>
         <div class="chart-panel" aria-label="Courbe de comparaison des prix carburant">
           <div class="chart-head">
             <h3>Courbe comparative</h3>
-            <span>Prix par litre</span>
+            <span>Prix moyen national par litre</span>
           </div>
           <div class="fuel-chart">
-            <svg viewBox="0 0 720 280" role="img" aria-label="Courbe SP95, SP98 et Diesel par station">
+            <svg viewBox="0 0 720 280" role="img" aria-label="Courbe SP95 Euro 95 et Diesel par pays">
               <g class="grid-lines">
                 <line x1="60" y1="40" x2="690" y2="40"></line>
                 <line x1="60" y1="95" x2="690" y2="95"></line>
@@ -85,28 +84,24 @@
                 <line x1="60" y1="205" x2="690" y2="205"></line>
               </g>
               <g class="axis-labels">
-                <text x="16" y="44">1.95</text>
-                <text x="16" y="99">1.85</text>
-                <text x="16" y="154">1.75</text>
-                <text x="16" y="209">1.65</text>
-                <text x="80" y="252">Total</text>
-                <text x="248" y="252">Esso</text>
-                <text x="414" y="252">Carrefour</text>
-                <text x="598" y="252">Shell</text>
+                <text x="16" y="44">2.35</text>
+                <text x="16" y="99">2.10</text>
+                <text x="16" y="154">1.85</text>
+                <text x="16" y="209">1.60</text>
+                <text x="112" y="252">France</text>
+                <text x="330" y="252">Italie</text>
+                <text x="554" y="252">Espagne</text>
               </g>
-              <polyline class="line sp95" points="100,167 280,151 460,178 640,129"></polyline>
-              <polyline class="line sp98" points="100,85 280,69 460,96 640,42"></polyline>
-              <polyline class="line diesel" points="100,211 280,200 460,189 640,173"></polyline>
+              <polyline class="line sp95" points="140,106 360,169 580,215"></polyline>
+              <polyline class="line diesel" points="140,48 360,96 580,142"></polyline>
               <g class="chart-dots">
-                <circle class="sp95-fill" cx="100" cy="167" r="5"></circle><circle class="sp95-fill" cx="280" cy="151" r="5"></circle><circle class="sp95-fill" cx="460" cy="178" r="5"></circle><circle class="sp95-fill" cx="640" cy="129" r="5"></circle>
-                <circle class="sp98-fill" cx="100" cy="85" r="5"></circle><circle class="sp98-fill" cx="280" cy="69" r="5"></circle><circle class="sp98-fill" cx="460" cy="96" r="5"></circle><circle class="sp98-fill" cx="640" cy="42" r="5"></circle>
-                <circle class="diesel-fill" cx="100" cy="211" r="5"></circle><circle class="diesel-fill" cx="280" cy="200" r="5"></circle><circle class="diesel-fill" cx="460" cy="189" r="5"></circle><circle class="diesel-fill" cx="640" cy="173" r="5"></circle>
+                <circle class="sp95-fill" cx="140" cy="106" r="5"></circle><circle class="sp95-fill" cx="360" cy="169" r="5"></circle><circle class="sp95-fill" cx="580" cy="215" r="5"></circle>
+                <circle class="diesel-fill" cx="140" cy="48" r="5"></circle><circle class="diesel-fill" cx="360" cy="96" r="5"></circle><circle class="diesel-fill" cx="580" cy="142" r="5"></circle>
               </g>
             </svg>
           </div>
           <div class="chart-legend">
-            <span><i class="sp95-fill"></i>SP95</span>
-            <span><i class="sp98-fill"></i>SP98</span>
+            <span><i class="sp95-fill"></i>SP95 / Euro 95</span>
             <span><i class="diesel-fill"></i>Diesel</span>
           </div>
         </div>
