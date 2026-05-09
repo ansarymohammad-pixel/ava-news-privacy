@@ -607,6 +607,18 @@ main,
   border-bottom: 0;
 }
 
+.source-link {
+  color: var(--primary-dark);
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.source-link:hover {
+  color: var(--blue);
+}
+
 .station-brand.france {
   background: linear-gradient(135deg, #21468b, #ffffff 52%, #ae1c28);
   color: #07151d;
