@@ -43,41 +43,112 @@
 
     <section class="section">
       <div class="container">
-        <div class="source-tabs" aria-label="AVA News modules">
-          <span>Analysis</span>
-          <span>Prediction</span>
-          <span class="active">Sources</span>
-          <span>Alerts</span>
+        <div class="source-tabs" role="tablist" aria-label="AVA News modules">
+          <button class="active" type="button" role="tab" aria-selected="true" aria-controls="news-tab-analysis" id="tab-analysis" data-news-tab="analysis">Analysis</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="news-tab-prediction" id="tab-prediction" data-news-tab="prediction">Prediction</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="news-tab-sources" id="tab-sources" data-news-tab="sources">Sources</button>
+          <button type="button" role="tab" aria-selected="false" aria-controls="news-tab-alerts" id="tab-alerts" data-news-tab="alerts">Alerts</button>
         </div>
-        <div class="source-architecture">
-          <div>
-            <p class="eyebrow">Source Architecture</p>
-            <h2>Reference source mix for transparency and context.</h2>
-            <p>AVA News compare les nouvelles avec des sources mainstream, instituts, agences officielles et analyses independantes avant de calculer la credibilite et l'impact probable.</p>
+
+        <div class="news-tab-panel active" id="news-tab-analysis" role="tabpanel" aria-labelledby="tab-analysis" data-news-panel="analysis">
+          <div class="source-architecture">
+            <div>
+              <p class="eyebrow">Analysis Engine</p>
+              <h2>Analyse chaque nouvelle avant de l'utiliser dans l'ecosysteme AVA.</h2>
+              <p>AVA News extrait la source, le sujet, le ton, la fraicheur et les signaux de risque pour produire un score lisible et utile.</p>
+            </div>
+            <div class="source-stats">
+              <div><span>Credibility</span><strong>92%</strong></div>
+              <div><span>Relevance</span><strong>86%</strong></div>
+              <div><span>Freshness</span><strong>24h</strong></div>
+            </div>
+            <div class="analysis-flow" aria-label="AVA News analysis formula">
+              <span>Credibility</span>
+              <b>x</b>
+              <span>Source reputation</span>
+              <b>x</b>
+              <span>Topic relevance</span>
+              <b>=</b>
+              <strong>Impact score</strong>
+            </div>
           </div>
-          <div class="source-stats">
-            <div><span>Media</span><strong>24</strong></div>
-            <div><span>Institutes</span><strong>9</strong></div>
-            <div><span>State</span><strong>3</strong></div>
-          </div>
-          <div class="bias-bar" aria-label="Center 63%, Left 21%, Right 8%, Other 8%">
-            <span class="center" style="width: 63%"></span>
-            <span class="left" style="width: 21%"></span>
-            <span class="right" style="width: 8%"></span>
-            <span class="other" style="width: 8%"></span>
-          </div>
-          <div class="bias-list">
-            <div><i class="center"></i>Center <strong>63%</strong></div>
-            <div><i class="left"></i>Left <strong>21%</strong></div>
-            <div><i class="right"></i>Right <strong>8%</strong></div>
-            <div><i class="other"></i>Other <strong>8%</strong></div>
+          <div class="color-code-grid">
+            <article><i class="center"></i><strong>Credibility score</strong><span>Mesure la fiabilite du publisher et la coherence du contenu.</span></article>
+            <article><i class="left"></i><strong>Rhetoric detection</strong><span>Detecte les termes emotionnels, alarmistes ou trop politiques.</span></article>
+            <article><i class="right"></i><strong>Market topic</strong><span>Classe la news : petrole, electricite, taxes, meteo, greve ou geopolitique.</span></article>
+            <article><i class="other"></i><strong>Impact score</strong><span>Transforme la news en signal pour Fuel et ElectricityCost.</span></article>
           </div>
         </div>
-        <div class="color-code-grid">
-          <article><i class="center"></i><strong>Center</strong><span>Source generalement factuelle ou institutionnelle.</span></article>
-          <article><i class="left"></i><strong>Left</strong><span>Source avec tendance editoriale gauche ou progressiste.</span></article>
-          <article><i class="right"></i><strong>Right</strong><span>Source avec tendance editoriale droite ou conservatrice.</span></article>
-          <article><i class="other"></i><strong>Other / State</strong><span>Agence publique, source etatique ou signal non classe.</span></article>
+
+        <div class="news-tab-panel" id="news-tab-prediction" role="tabpanel" aria-labelledby="tab-prediction" data-news-panel="prediction" hidden>
+          <div class="source-architecture">
+            <div>
+              <p class="eyebrow">Prediction Link</p>
+              <h2>Relier les nouvelles aux prix carburant et electricite.</h2>
+              <p>Les signaux valides alimentent AVA Fuel et AVA ElectricityCost pour indiquer si la tendance peut monter, baisser ou rester stable.</p>
+            </div>
+            <div class="prediction-grid">
+              <article><span>Fuel</span><strong>+3.2%</strong><small>Risque hausse si tension petrole confirmee</small></article>
+              <article><span>Electricity</span><strong>-1.4%</strong><small>Risque baisse si vent et production renouvelable forte</small></article>
+              <article><span>Confidence</span><strong>78%</strong><small>Basee sur sources recoupees et fraicheur</small></article>
+            </div>
+            <div class="trend-chart" aria-label="Prediction trend chart">
+              <span style="height: 42%"></span>
+              <span style="height: 58%"></span>
+              <span style="height: 46%"></span>
+              <span style="height: 70%"></span>
+              <span style="height: 62%"></span>
+              <span style="height: 82%"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="news-tab-panel" id="news-tab-sources" role="tabpanel" aria-labelledby="tab-sources" data-news-panel="sources" hidden>
+          <div class="source-architecture">
+            <div>
+              <p class="eyebrow">Source Architecture</p>
+              <h2>Reference source mix for transparency and context.</h2>
+              <p>AVA News compare les nouvelles avec des sources mainstream, instituts, agences officielles et analyses independantes avant de calculer la credibilite et l'impact probable.</p>
+            </div>
+            <div class="source-stats">
+              <div><span>Media</span><strong>24</strong></div>
+              <div><span>Institutes</span><strong>9</strong></div>
+              <div><span>State</span><strong>3</strong></div>
+            </div>
+            <div class="bias-bar" aria-label="Center 63%, Left 21%, Right 8%, Other 8%">
+              <span class="center" style="width: 63%"></span>
+              <span class="left" style="width: 21%"></span>
+              <span class="right" style="width: 8%"></span>
+              <span class="other" style="width: 8%"></span>
+            </div>
+            <div class="bias-list">
+              <div><i class="center"></i>Center <strong>63%</strong></div>
+              <div><i class="left"></i>Left <strong>21%</strong></div>
+              <div><i class="right"></i>Right <strong>8%</strong></div>
+              <div><i class="other"></i>Other <strong>8%</strong></div>
+            </div>
+          </div>
+          <div class="color-code-grid">
+            <article><i class="center"></i><strong>Center</strong><span>Source generalement factuelle ou institutionnelle.</span></article>
+            <article><i class="left"></i><strong>Left</strong><span>Source avec tendance editoriale gauche ou progressiste.</span></article>
+            <article><i class="right"></i><strong>Right</strong><span>Source avec tendance editoriale droite ou conservatrice.</span></article>
+            <article><i class="other"></i><strong>Other / State</strong><span>Agence publique, source etatique ou signal non classe.</span></article>
+          </div>
+        </div>
+
+        <div class="news-tab-panel" id="news-tab-alerts" role="tabpanel" aria-labelledby="tab-alerts" data-news-panel="alerts" hidden>
+          <div class="source-architecture">
+            <div>
+              <p class="eyebrow">Daily Alerts</p>
+              <h2>Notifier seulement les nouvelles qui peuvent changer une decision.</h2>
+              <p>AVA News peut envoyer une alerte quand une news fiable touche les carburants, l'electricite, la meteo, les greves ou les taxes.</p>
+            </div>
+            <div class="alert-grid">
+              <article class="impact-high"><strong>Fuel alert</strong><span>Oil shipping risk detected</span><b>High</b></article>
+              <article class="impact-medium"><strong>Electricity alert</strong><span>Peak-hour price pressure</span><b>Medium</b></article>
+              <article class="impact-low"><strong>Risk cleared</strong><span>Diplomacy signal reduces volatility</span><b>Low</b></article>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -196,6 +267,7 @@
     <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
   </footer>
   <script src="./network-background.js"></script>
+  <script src="./news-tabs.js?v=20260509"></script>
   <script src="./i18n.js"></script>
 </body>
 </html>
