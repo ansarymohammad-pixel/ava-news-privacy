@@ -1,158 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - AVA Intelligence</title>
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #5b6475;
-      --primary: #4f46e5;
-      --border: #e5e7eb;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    header {
-      background: linear-gradient(135deg, #111827, #312e81);
-      color: white;
-      padding: 28px 20px;
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      margin-left: 16px;
-    }
-
-    .brand {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .hero {
-      padding: 46px 0 28px;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      line-height: 1.1;
-    }
-
-    .hero p {
-      max-width: 720px;
-      color: #e5e7eb;
-      font-size: 18px;
-    }
-
-    main {
-      padding: 34px 0;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--text);
-      font-size: 24px;
-    }
-
-    p, li {
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--primary);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-  </style>
+  <meta name="description" content="Contact AVA Intelligence pour support, beta, partenariat, presse ou demande de suppression de donnees." />
+  <title>Contact / Download App - AVA Intelligence</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">AVA Intelligence</div>
-        <div>
-          <a href="./index.html">Privacy Policy</a>
-          <a href="./contact.html">Contact</a>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html"><span class="brand-mark">AVA</span><span>AVA Intelligence</span></a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a href="./fuel.html">AVA Fuel</a>
+        <a href="./parking.html">AVA Parking</a>
+        <a href="./news.html">AVA News Verify</a>
+        <a class="active" href="./contact.html">Contact</a>
       </nav>
-
-      <section class="hero">
-        <h1>Contact AVA Intelligence</h1>
-        <p>
-          For privacy questions, support requests, or app-related concerns about
-          AVA News or Hafez Sky, contact us using the details below.
-        </p>
-      </section>
     </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Email</h2>
-      <p>
-        <a href="mailto:support@avaintelligent.info">support@avaintelligent.info</a>
-      </p>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Contact / Download App</p>
+        <h1>Parlons d'AVA Intelligence.</h1>
+        <p>Support utilisateur, beta test, partenariat, presse ou question privacy : un seul point de contact.</p>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Apps</h2>
-      <ul>
-        <li>AVA News</li>
-        <li>Hafez Sky</li>
-      </ul>
+    <section class="section">
+      <div class="container contact-grid">
+        <article class="contact-card">
+          <h3>Email</h3>
+          <p><a href="mailto:support@avaintelligent.info">support@avaintelligent.info</a></p>
+          <p>Pour les demandes de support, confidentialite, suppression de donnees et partenariats.</p>
+        </article>
+        <article class="contact-card">
+          <h3>Download App</h3>
+          <p>Le lien Google Play officiel peut etre place ici des que l'application est publiee.</p>
+          <a class="store-button" href="https://play.google.com/store" rel="noopener"><span><span class="store-small">Disponible sur</span><span class="store-main">Google Play</span></span></a>
+        </article>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      © 2026 AVA Intelligence.
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <span>© 2026 AVA Intelligence.</span>
+      <div class="footer-links">
+        <a href="./privacy.html">Confidentialite</a>
+        <a href="./index.html">Accueil</a>
+      </div>
     </div>
   </footer>
 </body>

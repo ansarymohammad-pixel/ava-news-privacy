@@ -1,306 +1,169 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy - AVA Intelligence</title>
-  <style>
-    :root {
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #111827;
-      --muted: #5b6475;
-      --primary: #4f46e5;
-      --border: #e5e7eb;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: var(--bg);
-    }
-
-    header {
-      background: linear-gradient(135deg, #111827, #312e81);
-      color: white;
-      padding: 28px 20px;
-    }
-
-    .container {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      margin-left: 16px;
-    }
-
-    .brand {
-      font-size: 22px;
-      font-weight: 800;
-    }
-
-    .hero {
-      padding: 46px 0 28px;
-    }
-
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: 42px;
-      line-height: 1.1;
-    }
-
-    .hero p {
-      max-width: 760px;
-      color: #e5e7eb;
-      font-size: 18px;
-    }
-
-    main {
-      padding: 34px 0;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 10px 24px rgba(17, 24, 39, 0.06);
-    }
-
-    h2 {
-      margin-top: 0;
-      color: var(--text);
-      font-size: 24px;
-    }
-
-    h3 {
-      margin-bottom: 8px;
-      color: var(--text);
-      font-size: 18px;
-    }
-
-    p, li {
-      font-size: 16px;
-      color: var(--muted);
-    }
-
-    a {
-      color: var(--primary);
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .label {
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    .notice {
-      border-left: 5px solid var(--primary);
-      background: #eef2ff;
-      padding: 16px 18px;
-      border-radius: 12px;
-      margin: 22px 0;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 24px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-  </style>
+  <meta name="description" content="AVA Intelligence est une plateforme Smart Mobility & AI pour comparer le carburant, predire le parking et verifier les news avec l'IA." />
+  <meta name="keywords" content="AVA, AVA Fuel, AVA Parking, AVA News Verify, prix carburant, smart parking, verification news IA, mobilite intelligente" />
+  <title>AVA Intelligence - Smart Mobility & AI Platform</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">AVA Intelligence</div>
-        <div>
-          <a href="./index.html">Privacy Policy</a>
-          <a href="./contact.html">Contact</a>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html"><span class="brand-mark">AVA</span><span>AVA Intelligence</span></a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <a class="active" href="./index.html">Accueil</a>
+        <a href="./fuel.html">AVA Fuel</a>
+        <a href="./parking.html">AVA Parking</a>
+        <a href="./news.html">AVA News Verify</a>
+        <a href="./contact.html">Contact</a>
       </nav>
-
-      <section class="hero">
-        <h1>Privacy Policy for AVA Intelligence Apps</h1>
-        <p>
-          This Privacy Policy applies to AVA Intelligence applications, including
-          <strong>AVA News</strong> and <strong>Hafez Sky</strong>. It explains how we
-          access, process, use, and protect user and device information in connection
-          with our mobile apps and related backend services.
-        </p>
-      </section>
     </div>
   </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>Effective Date</h2>
-      <p><span class="label">Effective date:</span> April 29, 2026</p>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Smart Mobility & AI Platform</p>
+          <h1>AVA Intelligence</h1>
+          <p class="hero-copy">Une plateforme mobile pour economiser sur le carburant, trouver une place plus vite, verifier l'information et optimiser chaque deplacement.</p>
+          <div class="hero-actions">
+            <a class="store-button" href="#download" aria-label="Telecharger AVA sur Google Play">
+              <span>
+                <span class="store-small">Disponible sur</span>
+                <span class="store-main">Google Play</span>
+              </span>
+            </a>
+            <a class="button secondary" href="./contact.html">Demander une demo</a>
+          </div>
+          <div class="hero-points" aria-label="Fonctionnalites principales">
+            <div class="point"><span class="point-icon">€</span>Prix carburant en temps reel</div>
+            <div class="point"><span class="point-icon">P</span>Smart parking prediction</div>
+            <div class="point"><span class="point-icon">AI</span>AI news verification</div>
+            <div class="point"><span class="point-icon">↗</span>Optimisation deplacement</div>
+          </div>
+        </div>
+
+        <div class="phone-stack" aria-label="Apercu de l'application AVA">
+          <div class="phone">
+            <div class="phone-screen">
+              <div class="app-top"><span class="app-title">AVA Fuel</span><span class="pill">Live</span></div>
+              <div class="map-card"></div>
+              <div class="price-row"><div><strong>Total Access</strong><span>2.1 km - SP95</span></div><div class="price">1.72 €</div></div>
+              <div class="price-row"><div><strong>Esso Express</strong><span>3.4 km - Diesel</span></div><div class="price">1.64 €</div></div>
+              <div class="price-row"><div><strong>Prediction demain</strong><span>Tendance locale</span></div><div class="price">-0.03 €</div></div>
+            </div>
+          </div>
+          <div class="phone small">
+            <div class="phone-screen">
+              <div class="app-top"><span class="app-title">AVA Park</span><span class="pill">78%</span></div>
+              <div class="parking-row"><div><strong>Gare Centre</strong><span>12 places libres</span></div><div class="price">4 min</div></div>
+              <div class="parking-row"><div><strong>Rue Victor Hugo</strong><span>Prediction haute</span></div><div class="price">86%</div></div>
+              <div class="meter"><span style="width: 86%"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Apps Covered by This Policy</h2>
-      <ul>
-        <li><strong>AVA News</strong> - a headline analysis and source transparency app.</li>
-        <li><strong>Hafez Sky</strong> - a poetry, astronomy, and symbolic reading app.</li>
-      </ul>
-      <p>
-        If a future AVA Intelligence app links to this page, that app must also be
-        clearly identified in the Play listing or app experience and handled in a way
-        consistent with this policy.
-      </p>
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Produits AVA</p>
+          <h2>Une architecture claire pour trois besoins quotidiens.</h2>
+          <p>Chaque module AVA a sa propre page, ses propres fonctionnalites et une promesse simple pour l'utilisateur final.</p>
+        </div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="feature-icon">€</div>
+            <h3>AVA Fuel</h3>
+            <p>Comparer les prix carburant, voir les stations sur carte et anticiper les variations locales.</p>
+            <ul>
+              <li>Prix en temps reel</li>
+              <li>Cartes stations</li>
+              <li>Prediction prix</li>
+            </ul>
+            <a class="product-link" href="./fuel.html">Voir AVA Fuel</a>
+          </article>
+          <article class="product-card">
+            <div class="feature-icon">P</div>
+            <h3>AVA Parking</h3>
+            <p>Predire la disponibilite des parkings et guider l'utilisateur vers la meilleure option.</p>
+            <ul>
+              <li>Disponibilite parking</li>
+              <li>Prevision trafic</li>
+              <li>Optimisation place</li>
+            </ul>
+            <a class="product-link" href="./parking.html">Voir AVA Parking</a>
+          </article>
+          <article class="product-card">
+            <div class="feature-icon">AI</div>
+            <h3>AVA News Verify</h3>
+            <p>Evaluer la credibilite d'une information avec un score IA et une lecture rhetorique.</p>
+            <ul>
+              <li>Score credibilite</li>
+              <li>Source transparency</li>
+              <li>Detection rhetorique</li>
+            </ul>
+            <a class="product-link" href="./news.html">Voir AVA News</a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Information We May Process</h2>
-
-      <h3>AVA News</h3>
-      <ul>
-        <li>Text entered by the user for headline or content analysis</li>
-        <li>News source or publisher information used for transparency or context</li>
-        <li>Technical request and device information required for app operation, reliability, and security</li>
-        <li>Limited diagnostic or error information used to maintain the service</li>
-      </ul>
-
-      <h3>Hafez Sky</h3>
-      <ul>
-        <li>Optional nickname entered by the user</li>
-        <li>Optional birth month and birth date entered by the user</li>
-        <li>Mood, question, or intention entered by the user</li>
-        <li>Selected app language and reading preferences</li>
-        <li>Optional approximate or precise location data, when the user grants permission</li>
-        <li>Technical request and device information required for app operation, reliability, and security</li>
-      </ul>
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Screenshots</p>
+          <h2>Des interfaces pensees pour agir rapidement.</h2>
+          <p>Les apercus ci-dessous montrent les ecrans cles a integrer ou remplacer plus tard par de vraies captures Google Play.</p>
+        </div>
+        <div class="screens-grid">
+          <div class="screenshot"><div class="mini-screen"><h3>Carte carburant</h3><div class="map-card"></div><div class="price-row"><strong>Station la moins chere</strong><span class="price">1.64 €</span></div></div></div>
+          <div class="screenshot"><div class="mini-screen"><h3>Prediction parking</h3><div class="parking-row"><strong>Centre-ville</strong><span class="price">92%</span></div><div class="meter"><span style="width: 92%"></span></div><div class="parking-row"><strong>Temps estime</strong><span>6 min</span></div></div></div>
+          <div class="screenshot"><div class="mini-screen"><h3>News Verify</h3><div class="score-row"><strong>Score IA</strong><span class="price">81/100</span></div><div class="meter"><span style="width: 81%"></span></div><div class="score-row"><strong>Rhetorique detectee</strong><span>Emotion forte</span></div></div></div>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>How We Use Information</h2>
-      <p>We may use information processed through AVA Intelligence apps to:</p>
-      <ul>
-        <li>Provide headline analysis, symbolic reading, weather, or astronomy-related features</li>
-        <li>Generate app results based on user input and app functionality</li>
-        <li>Operate backend services that support app responses</li>
-        <li>Maintain, secure, monitor, debug, and improve app performance and reliability</li>
-        <li>Comply with applicable legal obligations and enforce our terms or policies</li>
-      </ul>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Confiance</p>
+          <h2>Un site optimise pour inspirer confiance et ameliorer le SEO.</h2>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card"><h3>Messages clairs</h3><p>Chaque produit explique sa valeur, ses cas d'usage et ses benefices concrets.</p></article>
+          <article class="trust-card"><h3>Telechargement visible</h3><p>Le bouton Google Play est present sur l'accueil et la section download.</p></article>
+          <article class="trust-card"><h3>Pages indexables</h3><p>Fuel, Parking, News et Contact ont leurs propres URLs pour le referencement.</p></article>
+        </div>
+      </div>
     </section>
 
-    <section class="card">
-      <h2>Location Data</h2>
-      <p>
-        <strong>Hafez Sky</strong> may request device location permission in order to
-        provide location-aware sky or weather context. Location access is optional.
-        If a user does not grant location permission, the app may still function with
-        more general or non-location-based results.
-      </p>
-      <p>
-        We do not request location permission for unrelated advertising or marketing purposes.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Backend and Third-Party Services</h2>
-      <p>
-        AVA Intelligence apps may send user-submitted data to AVA Intelligence backend
-        services in order to generate results, operate app features, or maintain service reliability.
-      </p>
-      <p>
-        Certain features may also rely on third-party infrastructure or APIs, such as
-        hosting providers, weather providers, analytics-free diagnostic infrastructure,
-        or public information sources. For example, Hafez Sky may use third-party weather
-        data providers to support weather-related context.
-      </p>
-      <p>
-        AVA News may display, analyze, or reference headlines or public publisher information
-        from third-party sources. AVA Intelligence is not the original publisher of third-party news content.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Data Sharing</h2>
-      <p>
-        We do not sell personal data. We may share data only as reasonably necessary to:
-      </p>
-      <ul>
-        <li>Provide app functionality through service providers or infrastructure partners</li>
-        <li>Maintain security, prevent abuse, or resolve technical issues</li>
-        <li>Comply with legal obligations or lawful requests</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Data Retention and Deletion</h2>
-      <p>
-        We aim to retain processed data only for as long as reasonably necessary for app
-        functionality, reliability, security, troubleshooting, legal compliance, and service improvement.
-      </p>
-      <p>
-        If you have a privacy or deletion request related to data submitted through an AVA
-        Intelligence app, please contact us using the details below.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Children's Privacy</h2>
-      <p>
-        AVA Intelligence apps are not intended to knowingly collect personal information from children.
-        If you believe a child has submitted personal information through one of our apps, please contact us.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Security</h2>
-      <p>
-        We use reasonable administrative, technical, and organizational measures designed to
-        protect information processed through our apps. However, no method of transmission or
-        storage is completely secure, and we cannot guarantee absolute security.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. When we do, we will update the
-        effective date shown above. Continued use of our apps after an update means the updated
-        policy will apply, subject to applicable law.
-      </p>
-    </section>
-
-    <section class="notice">
-      <strong>Contact:</strong>
-      If you have questions about this Privacy Policy, privacy requests, app support,
-      or content-related concerns, contact us at
-      <a href="mailto:support@avaintelligent.info">support@avaintelligent.info</a>
-      or visit our
-      <a href="./contact.html">Contact page</a>.
+    <section class="cta" id="download">
+      <div class="container">
+        <p class="eyebrow">Contact / Download App</p>
+        <h2>Telecharger AVA ou demander l'acces.</h2>
+        <p>Ajoutez ici le lien officiel Google Play des que l'application est publiee. En attendant, le contact support peut recevoir les demandes beta, presse ou partenaires.</p>
+        <div class="cta-actions">
+          <a class="store-button" href="https://play.google.com/store" rel="noopener">
+            <span><span class="store-small">Disponible sur</span><span class="store-main">Google Play</span></span>
+          </a>
+          <a class="button secondary" href="mailto:support@avaintelligent.info">support@avaintelligent.info</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      © 2026 AVA Intelligence. This policy applies to AVA News and Hafez Sky.
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <span>© 2026 AVA Intelligence. Smart Mobility & AI Platform.</span>
+      <div class="footer-links">
+        <a href="./privacy.html">Confidentialite</a>
+        <a href="./contact.html">Contact</a>
+      </div>
     </div>
   </footer>
 </body>
