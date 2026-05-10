@@ -1,0 +1,77 @@
+from datetime import datetime
+from typing import Literal
+
+from pydantic import BaseModel, Field
+
+
+MarketTopic = Literal["fuel", "electricity", "parking", "geopolitics", "weather", "taxes", "strike"]
+ImpactDirection = Literal["up", "down", "stable"]
+
+
+class NewsArticle(BaseModel):
+    id: str
+    publisher: str
+    title: str
+    url: str
+    source_type: Literal["mainstream", "institute", "official", "state", "independent"]
+    topic: MarketTopic
+    published_at: datetime
+    credibility_score: float = Field(ge=0, le=1)
+    source_reputation: float = Field(ge=0, le=1)
+
+
+class ImpactScore(BaseModel):
+    article_id: str
+    publisher: str
+    topic: MarketTopic
+    direction: ImpactDirection
+    credibility_score: float
+    source_reputation: float
+    topic_relevance: float
+    freshness: float
+    market_sensitivity: float
+    impact_score: float
+    explanation: str
+
+
+class FuelPrice(BaseModel):
+    operator: str
+    country: Literal["france", "italy", "spain"]
+    date: str
+    source: str
+    source_url: str
+    sp95_eur: float
+    diesel_eur: float
+    ava_advice: str
+
+
+class ElectricityPrice(BaseModel):
+    country: Literal["france", "italy", "spain"]
+    hour: str
+    price_eur_kwh: float
+    signal: Literal["low", "medium", "high"]
+    recommendation: str
+
+
+class ForecastPoint(BaseModel):
+    label: str
+    value: float
+
+
+class FuelForecast(BaseModel):
+    country: Literal["france", "italy", "spain"]
+    direction: ImpactDirection
+    confidence: float = Field(ge=0, le=1)
+    expected_change_eur_l: float
+    points: list[ForecastPoint]
+    explanation: str
+
+
+class ElectricityBestTime(BaseModel):
+    country: Literal["france", "italy", "spain"]
+    device: str
+    best_start_hour: str
+    estimated_kwh: float
+    estimated_cost_eur: float
+    risk: Literal["low", "medium", "high"]
+    explanation: str
