@@ -6,7 +6,7 @@
   <meta name="description" content="AVA Fuel compare les prix carburant, affiche les stations sur carte et predit les variations de prix." />
   <title>AVA Fuel - Comparaison carburant et prediction prix</title>
   <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./fuel.css?v=20260510" />
+  <link rel="stylesheet" href="./fuel.css?v=20260510b" />
 </head>
 <body>
   <header class="site-header">
@@ -39,8 +39,9 @@
         <h1>Decider ou faire le plein avec plus de confiance.</h1>
         <p>AVA Fuel transforme les prix officiels, les operateurs et les signaux AVA News en recommandation claire : ou faire le plein, quel carburant choisir et quand attendre.</p>
         <div class="hero-actions">
-          <a class="store-button" href="./contact.html"><span><span class="store-small">Acces beta</span><span class="store-main">Demander le lien</span></span></a>
+          <a class="store-button" href="#fuel-prices"><span><span class="store-small">Action rapide</span><span class="store-main">Trouver le carburant le moins cher</span></span></a>
           <a class="button secondary" href="#fuel-prices">Voir les prix</a>
+          <a class="button secondary" href="./contact.html">Demander l'acces beta</a>
         </div>
       </div>
     </section>
@@ -61,9 +62,30 @@
           </div>
         </div>
         <div class="feature-grid">
-          <a class="feature-card" href="#fuel-prices"><div class="feature-icon">EUR</div><h3>Comparer les prix</h3><p>Classement par pays, operateur, carburant et source officielle pour reduire le cout sans perdre du temps.</p><span class="feature-link">Ouvrir le tableau</span></a>
-          <a class="feature-card" href="#fuel-screens"><div class="feature-icon">MAP</div><h3>Voir les stations</h3><p>Apercu clair des stations, du meilleur choix et des informations utiles avant le trajet.</p><span class="feature-link">Voir les apercus</span></a>
-          <a class="feature-card" href="#fuel-chart"><div class="feature-icon">AI</div><h3>Anticiper la tendance</h3><p>Les signaux AVA News aident a comprendre si le prix peut monter, baisser ou rester stable.</p><span class="feature-link">Voir la courbe</span></a>
+          <a class="feature-card product-metric-card" href="#fuel-prices">
+            <div class="feature-card-top"><div class="feature-icon">EUR</div><strong>Live ranking</strong></div>
+            <h3>Comparer les prix</h3>
+            <p>Classement par pays, operateur, carburant et source officielle pour reduire le cout sans perdre du temps.</p>
+            <div class="mini-rank" aria-label="Classement des stations en direct"><span style="width: 92%">TotalEnergies</span><span style="width: 81%">Carrefour</span><span style="width: 73%">Esso</span></div>
+            <span class="feature-stat">4 operateurs compares</span>
+            <span class="feature-link">Ouvrir le tableau</span>
+          </a>
+          <a class="feature-card product-metric-card" href="#fuel-screens">
+            <div class="feature-card-top"><div class="feature-icon">MAP</div><strong>Station map</strong></div>
+            <h3>Voir les stations</h3>
+            <p>Apercu clair des stations, du meilleur choix et des informations utiles avant le trajet.</p>
+            <div class="mini-map-preview" aria-label="Apercu carte station"><i></i><i></i><i></i><span></span></div>
+            <span class="feature-stat">Source + date visibles</span>
+            <span class="feature-link">Voir les apercus</span>
+          </a>
+          <a class="feature-card product-metric-card" href="#fuel-forecast">
+            <div class="feature-card-top"><div class="feature-icon">AI</div><strong>AI forecast</strong></div>
+            <h3>Anticiper la tendance</h3>
+            <p>Les signaux AVA News aident a comprendre si le prix peut monter, baisser ou rester stable.</p>
+            <div class="mini-sparkline" aria-label="Mini tendance prediction"><span style="height: 44%"></span><span style="height: 52%"></span><span style="height: 47%"></span><span style="height: 68%"></span><span style="height: 61%"></span></div>
+            <span class="feature-stat">+12% precision visee</span>
+            <span class="feature-link">Voir la prediction</span>
+          </a>
         </div>
       </div>
     </section>
@@ -132,6 +154,33 @@
       </div>
     </section>
 
+    <section class="section" id="fuel-forecast">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Prediction tendance carburant</p>
+          <h2>Visualiser la tendance avant de faire le plein.</h2>
+          <p>Exemple de prevision hebdomadaire basee sur les prix carburant, les signaux AVA News et la sensibilite du marche.</p>
+        </div>
+        <div class="forecast-panel">
+          <div class="forecast-summary">
+            <strong>Cette semaine</strong>
+            <span>Risque hausse modere</span>
+            <b>+0.08 EUR/L</b>
+            <a class="button primary" href="#fuel-prices">Commencer la comparaison</a>
+          </div>
+          <div class="weekly-bars" aria-label="Prediction hebdomadaire prix carburant">
+            <div><span style="height: 38%"></span><small>Lun</small><b>1.70</b></div>
+            <div><span style="height: 45%"></span><small>Mar</small><b>1.73</b></div>
+            <div><span style="height: 53%"></span><small>Mer</small><b>1.76</b></div>
+            <div><span style="height: 61%"></span><small>Jeu</small><b>1.79</b></div>
+            <div><span style="height: 70%"></span><small>Ven</small><b>1.82</b></div>
+            <div><span style="height: 64%"></span><small>Sam</small><b>1.80</b></div>
+            <div><span style="height: 58%"></span><small>Dim</small><b>1.78</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section alt" id="fuel-screens">
       <div class="container screens-grid">
         <div class="screenshot"><div class="mini-screen"><h3>Stations proches</h3><div class="map-card"></div><div class="price-row"><strong>Meilleur choix</strong><span class="price">1.64 EUR</span></div></div></div>
@@ -142,10 +191,10 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
+    <div class="container footer-grid"><span>(c) 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
   </footer>
   <script src="./network-background.js"></script>
   <script src="./fuel-data.js?v=20260510"></script>
-  <script src="./i18n.js?v=20260510"></script>
+  <script src="./i18n.js?v=20260510b"></script>
 </body>
 </html>
