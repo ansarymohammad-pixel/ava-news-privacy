@@ -6,7 +6,7 @@
   <meta name="description" content="AVA Fuel compare les prix carburant, affiche les stations sur carte et predit les variations de prix." />
   <title>AVA Fuel - Comparaison carburant et prediction prix</title>
   <link rel="stylesheet" href="./styles.css" />
-  <link rel="stylesheet" href="./fuel.css?v=20260509" />
+  <link rel="stylesheet" href="./fuel.css?v=20260510" />
 </head>
 <body>
   <header class="site-header">
@@ -36,21 +36,22 @@
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow">AVA Fuel</p>
-        <h1>Comparer le carburant avant de rouler.</h1>
-        <p>AVA Fuel aide l'utilisateur a trouver la meilleure station, comprendre les ecarts de prix et anticiper les variations locales.</p>
+        <h1>Decider ou faire le plein avec plus de confiance.</h1>
+        <p>AVA Fuel transforme les prix officiels, les operateurs et les signaux AVA News en recommandation claire : ou faire le plein, quel carburant choisir et quand attendre.</p>
         <div class="hero-actions">
           <a class="store-button" href="./contact.html"><span><span class="store-small">Acces beta</span><span class="store-main">Demander le lien</span></span></a>
+          <a class="button secondary" href="#fuel-prices">Voir les prix</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="fuel-workflow">
+        <div class="fuel-workflow" id="fuel-engine">
           <div class="workflow-copy">
-            <p class="eyebrow">AVA Fuel Engine</p>
-            <h2>Du choix du pays a la meilleure decision carburant.</h2>
-            <p>AVA Fuel relie pays, operateurs, sources officielles, prix carburant et signaux AVA News pour recommander le bon operateur et anticiper la tendance.</p>
+            <p class="eyebrow">Moteur AVA Fuel</p>
+            <h2>Un assistant carburant qui explique sa decision.</h2>
+            <p>Le produit ne montre pas seulement une liste de prix. Il compare les operateurs, verifie la source, lit la tendance marche et donne une recommandation exploitable.</p>
           </div>
           <div class="workflow-steps" aria-label="AVA Fuel workflow">
             <article><span>01</span><strong>Pays choisi</strong><small>France, Italie ou Espagne</small></article>
@@ -60,14 +61,14 @@
           </div>
         </div>
         <div class="feature-grid">
-          <article class="feature-card"><div class="feature-icon">?</div><h3>Comparaison carburant</h3><p>Classement des stations selon le prix, le pays, l'operateur, le type de carburant et la pertinence du trajet.</p></article>
-          <article class="feature-card"><div class="feature-icon">?</div><h3>Cartes stations</h3><p>Carte claire avec stations proches, informations utiles et itineraire vers l'option la plus interessante.</p></article>
-          <article class="feature-card"><div class="feature-icon">?</div><h3>Prediction prix</h3><p>Lecture des tendances pour aider l'utilisateur a choisir le bon moment pour faire le plein.</p></article>
+          <a class="feature-card" href="#fuel-prices"><div class="feature-icon">EUR</div><h3>Comparer les prix</h3><p>Classement par pays, operateur, carburant et source officielle pour reduire le cout sans perdre du temps.</p><span class="feature-link">Ouvrir le tableau</span></a>
+          <a class="feature-card" href="#fuel-screens"><div class="feature-icon">MAP</div><h3>Voir les stations</h3><p>Apercu clair des stations, du meilleur choix et des informations utiles avant le trajet.</p><span class="feature-link">Voir les apercus</span></a>
+          <a class="feature-card" href="#fuel-chart"><div class="feature-icon">AI</div><h3>Anticiper la tendance</h3><p>Les signaux AVA News aident a comprendre si le prix peut monter, baisser ou rester stable.</p><span class="feature-link">Voir la courbe</span></a>
         </div>
       </div>
     </section>
 
-    <section class="section alt">
+    <section class="section alt" id="fuel-prices">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Prix essence</p>
@@ -85,14 +86,14 @@
               <tr><th>Operateur</th><th>Pays</th><th>Date exacte</th><th>Source</th><th>SP95 / Euro 95</th><th>Diesel</th><th>Conseil AVA</th></tr>
             </thead>
             <tbody data-fuel-table-body>
-              <tr><td><span class="operator-logo totalenergies">te</span>TotalEnergies</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr / Roole Data</a></td><td>2.049 €</td><td>2.312 €</td><td>Diesel sous pression</td></tr>
-              <tr><td><span class="operator-logo esso">E</span>Esso Express</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.061 €</td><td>2.298 €</td><td>Bon compromis</td></tr>
-              <tr><td><span class="operator-logo carrefour">C</span>Carrefour</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.018 €</td><td>2.284 €</td><td>Meilleur SP95</td></tr>
-              <tr><td><span class="operator-logo shell">S</span>Shell</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.087 €</td><td>2.330 €</td><td>Prix premium</td></tr>
+              <tr><td><span class="operator-logo totalenergies">te</span>TotalEnergies</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr / Roole Data</a></td><td>2.049 EUR</td><td>2.312 EUR</td><td>Diesel sous pression</td></tr>
+              <tr><td><span class="operator-logo esso">E</span>Esso Express</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.061 EUR</td><td>2.298 EUR</td><td>Bon compromis</td></tr>
+              <tr><td><span class="operator-logo carrefour">C</span>Carrefour</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.018 EUR</td><td>2.284 EUR</td><td>Meilleur SP95</td></tr>
+              <tr><td><span class="operator-logo shell">S</span>Shell</td><td>France</td><td>15/04/2026</td><td><a class="source-link" href="https://www.data.gouv.fr/fr/datasets/prix-des-carburants-en-france-flux-instantane-v2/" target="_blank" rel="noopener">data.gouv.fr</a></td><td>2.087 EUR</td><td>2.330 EUR</td><td>Prix premium</td></tr>
             </tbody>
           </table>
         </div>
-        <div class="chart-panel" aria-label="Courbe de comparaison des prix carburant">
+        <div class="chart-panel" id="fuel-chart" aria-label="Courbe de comparaison des prix carburant">
           <div class="chart-head">
             <h3>Courbe comparative</h3>
             <span>Prix moyen national par litre</span>
@@ -131,11 +132,11 @@
       </div>
     </section>
 
-    <section class="section alt">
+    <section class="section alt" id="fuel-screens">
       <div class="container screens-grid">
-        <div class="screenshot"><div class="mini-screen"><h3>Stations proches</h3><div class="map-card"></div><div class="price-row"><strong>Meilleur choix</strong><span class="price">1.64 €</span></div></div></div>
-        <div class="screenshot"><div class="mini-screen"><h3>Comparaison</h3><div class="price-row"><strong>Diesel</strong><span class="price">1.64 €</span></div><div class="price-row"><strong>SP95</strong><span class="price">1.72 €</span></div><div class="price-row"><strong>SP98</strong><span class="price">1.86 €</span></div></div></div>
-        <div class="screenshot"><div class="mini-screen"><h3>Prediction</h3><div class="score-row"><strong>Demain</strong><span class="price">-0.03 €</span></div><div class="meter"><span style="width: 68%"></span></div><p>Probabilite de baisse moderee sur votre zone.</p></div></div>
+        <div class="screenshot"><div class="mini-screen"><h3>Stations proches</h3><div class="map-card"></div><div class="price-row"><strong>Meilleur choix</strong><span class="price">1.64 EUR</span></div></div></div>
+        <div class="screenshot"><div class="mini-screen"><h3>Comparaison</h3><div class="price-row"><strong>Diesel</strong><span class="price">1.64 EUR</span></div><div class="price-row"><strong>SP95</strong><span class="price">1.72 EUR</span></div><div class="price-row"><strong>SP98</strong><span class="price">1.86 EUR</span></div></div></div>
+        <div class="screenshot"><div class="mini-screen"><h3>Prediction</h3><div class="score-row"><strong>Demain</strong><span class="price">-0.03 EUR</span></div><div class="meter"><span style="width: 68%"></span></div><p>Probabilite de baisse moderee sur votre zone.</p></div></div>
       </div>
     </section>
   </main>
@@ -144,7 +145,7 @@
     <div class="container footer-grid"><span>© 2026 AVA Intelligence.</span><div class="footer-links"><a href="./privacy.html">Confidentialite</a><a href="./contact.html">Contact</a></div></div>
   </footer>
   <script src="./network-background.js"></script>
-  <script src="./fuel-data.js?v=20260509"></script>
-  <script src="./i18n.js"></script>
+  <script src="./fuel-data.js?v=20260510"></script>
+  <script src="./i18n.js?v=20260510"></script>
 </body>
 </html>
