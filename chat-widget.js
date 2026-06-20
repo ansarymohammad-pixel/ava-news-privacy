@@ -1,0 +1,205 @@
+(function () {
+  const API_URL = (window.AVA_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
+  const copy = {
+    fr: {
+      subtitle: "Assistant IA local",
+      checking: "Verification d'Ollama...",
+      online: "Ollama disponible",
+      missing: "Ollama actif, modele manquant",
+      offline: "Assistant local indisponible",
+      greeting: "Bonjour. Je peux vous guider dans AVA Fuel, ElectricityCost, Parking et News Verify.",
+      placeholder: "Posez votre question...",
+      close: "Fermer l'assistant",
+      open: "Ouvrir l'assistant AVA",
+      send: "Envoyer",
+      error: "Je ne peux pas joindre Ollama. Demarrez Ollama et le backend FastAPI, puis reessayez.",
+      prompts: ["Comparer les carburants", "Meilleur horaire electricite", "Comment AVA verifie une news ?"]
+    },
+    en: {
+      subtitle: "Local AI assistant",
+      checking: "Checking Ollama...",
+      online: "Ollama available",
+      missing: "Ollama active, model missing",
+      offline: "Local assistant unavailable",
+      greeting: "Hello. I can guide you through AVA Fuel, ElectricityCost, Parking, and News Verify.",
+      placeholder: "Ask your question...",
+      close: "Close assistant",
+      open: "Open AVA assistant",
+      send: "Send",
+      error: "I cannot reach Ollama. Start Ollama and the FastAPI backend, then try again.",
+      prompts: ["Compare fuel prices", "Best electricity time", "How does AVA verify news?"]
+    },
+    es: {
+      subtitle: "Asistente IA local",
+      checking: "Comprobando Ollama...",
+      online: "Ollama disponible",
+      missing: "Ollama activo, falta el modelo",
+      offline: "Asistente local no disponible",
+      greeting: "Hola. Puedo guiarte por AVA Fuel, ElectricityCost, Parking y News Verify.",
+      placeholder: "Escribe tu pregunta...",
+      close: "Cerrar asistente",
+      open: "Abrir asistente AVA",
+      send: "Enviar",
+      error: "No puedo conectar con Ollama. Inicia Ollama y el backend FastAPI e intentalo de nuevo.",
+      prompts: ["Comparar combustibles", "Mejor horario electrico", "Como verifica AVA una noticia?"]
+    }
+  };
+
+  let language = localStorage.getItem("avaLanguage") || document.documentElement.lang || "fr";
+  let history = [];
+  let busy = false;
+
+  const launcher = document.createElement("button");
+  launcher.className = "ava-chat-launcher";
+  launcher.type = "button";
+  launcher.textContent = "AVA";
+
+  const panel = document.createElement("section");
+  panel.className = "ava-chat-panel";
+  panel.hidden = true;
+  panel.innerHTML = `
+    <header class="ava-chat-header">
+      <div class="ava-chat-title"><strong>AVA Assistant</strong><small></small></div>
+      <button class="ava-chat-close" type="button" aria-label="Close">&times;</button>
+    </header>
+    <div class="ava-chat-body" aria-live="polite">
+      <div class="ava-chat-status"></div>
+      <div class="ava-chat-messages"></div>
+      <div class="ava-chat-quick-prompts"></div>
+    </div>
+    <form class="ava-chat-form">
+      <textarea rows="1" maxlength="2000"></textarea>
+      <button class="ava-chat-send" type="submit" aria-label="Send">&uarr;</button>
+    </form>`;
+
+  document.body.append(launcher, panel);
+
+  const closeButton = panel.querySelector(".ava-chat-close");
+  const subtitle = panel.querySelector(".ava-chat-title small");
+  const statusNode = panel.querySelector(".ava-chat-status");
+  const messagesNode = panel.querySelector(".ava-chat-messages");
+  const promptsNode = panel.querySelector(".ava-chat-quick-prompts");
+  const form = panel.querySelector(".ava-chat-form");
+  const input = form.querySelector("textarea");
+  const sendButton = panel.querySelector(".ava-chat-send");
+
+  function currentCopy() {
+    return copy[language] || copy.fr;
+  }
+
+  function appendMessage(role, content) {
+    const message = document.createElement("div");
+    message.className = `ava-chat-message ${role}`;
+    message.textContent = content;
+    messagesNode.append(message);
+    messagesNode.parentElement.scrollTop = messagesNode.parentElement.scrollHeight;
+  }
+
+  function renderLanguage() {
+    const text = currentCopy();
+    subtitle.textContent = text.subtitle;
+    launcher.setAttribute("aria-label", text.open);
+    closeButton.setAttribute("aria-label", text.close);
+    input.placeholder = text.placeholder;
+    sendButton.setAttribute("aria-label", text.send);
+    promptsNode.replaceChildren();
+    text.prompts.forEach((prompt) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = prompt;
+      button.addEventListener("click", () => {
+        input.value = prompt;
+        input.focus();
+      });
+      promptsNode.append(button);
+    });
+    if (!history.length) {
+      messagesNode.replaceChildren();
+      appendMessage("assistant", text.greeting);
+    }
+  }
+
+  async function checkStatus() {
+    statusNode.className = "ava-chat-status";
+    statusNode.textContent = currentCopy().checking;
+    try {
+      const response = await fetch(`${API_URL}/chat/status`, { signal: AbortSignal.timeout(4000) });
+      if (!response.ok) throw new Error("status failed");
+      const status = await response.json();
+      statusNode.classList.add(status.available && status.model_installed ? "online" : "offline");
+      statusNode.textContent = status.available
+        ? (status.model_installed ? currentCopy().online : currentCopy().missing)
+        : currentCopy().offline;
+    } catch (error) {
+      statusNode.classList.add("offline");
+      statusNode.textContent = currentCopy().offline;
+    }
+  }
+
+  async function sendMessage(message) {
+    if (busy || !message.trim()) return;
+    busy = true;
+    input.disabled = true;
+    sendButton.disabled = true;
+    appendMessage("user", message.trim());
+
+    try {
+      const response = await fetch(`${API_URL}/chat/message`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: message.trim(),
+          history: history.slice(-10),
+          language,
+          page: location.pathname.split("/").pop() || "index.html"
+        })
+      });
+      if (!response.ok) throw new Error("chat failed");
+      const data = await response.json();
+      history.push({ role: "user", content: message.trim() }, { role: "assistant", content: data.answer });
+      history = history.slice(-10);
+      appendMessage("assistant", data.answer);
+    } catch (error) {
+      appendMessage("assistant", currentCopy().error);
+    } finally {
+      busy = false;
+      input.disabled = false;
+      sendButton.disabled = false;
+      input.value = "";
+      input.focus();
+    }
+  }
+
+  launcher.addEventListener("click", () => {
+    panel.hidden = false;
+    launcher.hidden = true;
+    input.focus();
+    checkStatus();
+  });
+
+  closeButton.addEventListener("click", () => {
+    panel.hidden = true;
+    launcher.hidden = false;
+    launcher.focus();
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    sendMessage(input.value);
+  });
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  window.addEventListener("ava-language-change", (event) => {
+    language = event.detail.lang;
+    renderLanguage();
+    if (!panel.hidden) checkStatus();
+  });
+
+  renderLanguage();
+})();

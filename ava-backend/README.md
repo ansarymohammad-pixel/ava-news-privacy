@@ -29,6 +29,29 @@ Open:
 - `GET /fuel/prediction?country=france`
 - `GET /electricity/prices?country=france`
 - `GET /electricity/best-time?country=france&device=washing_machine`
+- `GET /chat/status`
+- `POST /chat/message`
+
+## Ollama assistant
+
+Install Ollama, then pull the configured model and start the local service:
+
+```powershell
+ollama pull llama3.2:3b
+ollama serve
+```
+
+The default backend connection is `http://127.0.0.1:11434`. Change `OLLAMA_URL` and
+`OLLAMA_MODEL` in `.env` when required. The website calls FastAPI, not Ollama directly.
+
+For the public website, deploy FastAPI over HTTPS and set `window.AVA_API_URL` to that URL.
+Visitors cannot connect to an Ollama instance running only on your personal computer.
+
+After the first setup, start the complete local stack with:
+
+```powershell
+.\start-local.ps1
+```
 
 ## Environment
 

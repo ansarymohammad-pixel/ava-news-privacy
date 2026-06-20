@@ -1,0 +1,186 @@
+.ava-chat-launcher {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 1100;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #0b3f38;
+  box-shadow: 0 18px 44px rgba(11, 63, 56, 0.28);
+  font-size: 15px;
+  font-weight: 950;
+  cursor: pointer;
+}
+
+.ava-chat-launcher:hover,
+.ava-chat-launcher:focus-visible {
+  background: #126b5f;
+}
+
+.ava-chat-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 92px;
+  z-index: 1100;
+  width: min(390px, calc(100vw - 32px));
+  height: min(620px, calc(100vh - 120px));
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  border: 1px solid #dce5ea;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 28px 80px rgba(16, 24, 40, 0.22);
+}
+
+.ava-chat-panel[hidden] {
+  display: none;
+}
+
+.ava-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  color: #ffffff;
+  background: #0b3f38;
+}
+
+.ava-chat-title strong,
+.ava-chat-title small {
+  display: block;
+}
+
+.ava-chat-title small {
+  margin-top: 3px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ava-chat-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.ava-chat-body {
+  overflow-y: auto;
+  padding: 18px;
+  background: #f6f9fa;
+}
+
+.ava-chat-status {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 14px;
+  color: #5f6c7b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ava-chat-status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f2b84b;
+}
+
+.ava-chat-status.online::before { background: #1f9d68; }
+.ava-chat-status.offline::before { background: #d9404f; }
+
+.ava-chat-message {
+  max-width: 88%;
+  margin-bottom: 12px;
+  padding: 11px 13px;
+  border-radius: 8px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.ava-chat-message.assistant {
+  color: #172033;
+  background: #ffffff;
+  border: 1px solid #dce5ea;
+}
+
+.ava-chat-message.user {
+  margin-left: auto;
+  color: #ffffff;
+  background: #126b5f;
+}
+
+.ava-chat-quick-prompts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 6px 0 16px;
+}
+
+.ava-chat-quick-prompts button {
+  padding: 8px 10px;
+  border: 1px solid #cfdde1;
+  border-radius: 999px;
+  color: #0b3f38;
+  background: #ffffff;
+  font-size: 12px;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.ava-chat-form {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  gap: 10px;
+  padding: 12px;
+  border-top: 1px solid #dce5ea;
+  background: #ffffff;
+}
+
+.ava-chat-form textarea {
+  min-height: 44px;
+  max-height: 110px;
+  resize: vertical;
+  padding: 11px 12px;
+  border: 1px solid #cfdde1;
+  border-radius: 8px;
+  color: #172033;
+  font: inherit;
+}
+
+.ava-chat-send {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #0b3f38;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ava-chat-send:disabled,
+.ava-chat-form textarea:disabled {
+  cursor: wait;
+  opacity: 0.58;
+}
+
+@media (max-width: 560px) {
+  .ava-chat-launcher { right: 14px; bottom: 14px; }
+  .ava-chat-panel {
+    right: 14px;
+    bottom: 82px;
+    height: min(600px, calc(100vh - 104px));
+  }
+}

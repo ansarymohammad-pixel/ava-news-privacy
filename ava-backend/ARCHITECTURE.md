@@ -25,6 +25,11 @@ AVA Intelligence Core
                +-- electricity best time
                +-- parking forecast later
 
+         +-- AVA Assistant
+               +-- FastAPI chat proxy
+               +-- local Ollama model
+               +-- grounded AVA product prompt
+
 PostgreSQL + pgvector + Redis cache
          |
 External APIs / RSS / official data sources
