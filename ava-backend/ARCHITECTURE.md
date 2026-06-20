@@ -27,7 +27,7 @@ AVA Intelligence Core
 
          +-- AVA Assistant
                +-- FastAPI chat proxy
-               +-- local Ollama model
+               +-- Gemini API
                +-- grounded AVA product prompt
 
 PostgreSQL + pgvector + Redis cache

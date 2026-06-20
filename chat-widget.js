@@ -2,19 +2,18 @@
   const API_URL = (window.AVA_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
   const copy = {
     fr: {
-      subtitle: "Assistant IA local",
-      checking: "Verification d'Ollama...",
-      online: "Ollama disponible",
-      missing: "Ollama actif, modele manquant",
-      offline: "Assistant local indisponible",
-      fallbackStatus: "Guide AVA disponible - IA locale hors ligne",
+      subtitle: "Assistant IA AVA",
+      checking: "Connexion a Gemini...",
+      online: "Gemini disponible",
+      offline: "Gemini indisponible",
+      fallbackStatus: "Guide AVA disponible - Gemini hors ligne",
       greeting: "Bonjour. Je peux vous guider dans AVA Fuel, ElectricityCost, Parking et News Verify.",
       placeholder: "Posez votre question...",
       close: "Fermer l'assistant",
       open: "Ouvrir l'assistant AVA",
       send: "Envoyer",
-      error: "Je ne peux pas joindre Ollama. Demarrez Ollama et le backend FastAPI, puis reessayez.",
-      fallbackGeneric: "Le moteur IA local est hors ligne. Je peux toutefois vous guider vers AVA Fuel, ElectricityCost, Parking ou News Verify.",
+      error: "Je ne peux pas joindre Gemini. Verifiez le backend FastAPI, puis reessayez.",
+      fallbackGeneric: "Gemini est indisponible. Je peux toutefois vous guider vers AVA Fuel, ElectricityCost, Parking ou News Verify.",
       fallbackFuel: "AVA Fuel compare les prix par pays et operateur, indique la source et la date, puis presente une tendance explicative. Ouvrez la page AVA Fuel pour comparer France, Italie et Espagne.",
       fallbackElectricity: "AVA ElectricityCost estime le cout d'un appareil selon sa puissance, sa duree et le prix du kWh, puis suggere un horaire moins couteux.",
       fallbackParking: "AVA Parking est concu pour combiner disponibilite, trafic et prediction afin d'orienter l'utilisateur vers une zone de stationnement adaptee.",
@@ -22,19 +21,18 @@
       prompts: ["Comparer les carburants", "Meilleur horaire electricite", "Comment AVA verifie une news ?"]
     },
     en: {
-      subtitle: "Local AI assistant",
-      checking: "Checking Ollama...",
-      online: "Ollama available",
-      missing: "Ollama active, model missing",
-      offline: "Local assistant unavailable",
-      fallbackStatus: "AVA guide available - local AI offline",
+      subtitle: "AVA AI assistant",
+      checking: "Connecting to Gemini...",
+      online: "Gemini available",
+      offline: "Gemini unavailable",
+      fallbackStatus: "AVA guide available - Gemini offline",
       greeting: "Hello. I can guide you through AVA Fuel, ElectricityCost, Parking, and News Verify.",
       placeholder: "Ask your question...",
       close: "Close assistant",
       open: "Open AVA assistant",
       send: "Send",
-      error: "I cannot reach Ollama. Start Ollama and the FastAPI backend, then try again.",
-      fallbackGeneric: "The local AI engine is offline. I can still guide you to AVA Fuel, ElectricityCost, Parking, or News Verify.",
+      error: "I cannot reach Gemini. Check the FastAPI backend, then try again.",
+      fallbackGeneric: "Gemini is unavailable. I can still guide you to AVA Fuel, ElectricityCost, Parking, or News Verify.",
       fallbackFuel: "AVA Fuel compares prices by country and operator, shows the source and date, and presents an explanatory trend. Open AVA Fuel to compare France, Italy, and Spain.",
       fallbackElectricity: "AVA ElectricityCost estimates appliance cost from power, duration, and kWh price, then suggests a lower-cost time.",
       fallbackParking: "AVA Parking is designed to combine availability, traffic, and prediction to guide users toward a suitable parking area.",
@@ -42,19 +40,18 @@
       prompts: ["Compare fuel prices", "Best electricity time", "How does AVA verify news?"]
     },
     es: {
-      subtitle: "Asistente IA local",
-      checking: "Comprobando Ollama...",
-      online: "Ollama disponible",
-      missing: "Ollama activo, falta el modelo",
-      offline: "Asistente local no disponible",
-      fallbackStatus: "Guia AVA disponible - IA local desconectada",
+      subtitle: "Asistente IA AVA",
+      checking: "Conectando con Gemini...",
+      online: "Gemini disponible",
+      offline: "Gemini no disponible",
+      fallbackStatus: "Guia AVA disponible - Gemini desconectado",
       greeting: "Hola. Puedo guiarte por AVA Fuel, ElectricityCost, Parking y News Verify.",
       placeholder: "Escribe tu pregunta...",
       close: "Cerrar asistente",
       open: "Abrir asistente AVA",
       send: "Enviar",
-      error: "No puedo conectar con Ollama. Inicia Ollama y el backend FastAPI e intentalo de nuevo.",
-      fallbackGeneric: "El motor de IA local esta desconectado. Aun puedo guiarte hacia AVA Fuel, ElectricityCost, Parking o News Verify.",
+      error: "No puedo conectar con Gemini. Comprueba el backend FastAPI e intentalo de nuevo.",
+      fallbackGeneric: "Gemini no esta disponible. Aun puedo guiarte hacia AVA Fuel, ElectricityCost, Parking o News Verify.",
       fallbackFuel: "AVA Fuel compara precios por pais y operador, muestra fuente y fecha, y presenta una tendencia explicativa. Abre AVA Fuel para comparar Francia, Italia y Espana.",
       fallbackElectricity: "AVA ElectricityCost estima el coste de un aparato segun potencia, duracion y precio del kWh, y sugiere un horario mas barato.",
       fallbackParking: "AVA Parking esta disenado para combinar disponibilidad, trafico y prediccion y orientar al usuario hacia una zona adecuada.",
@@ -154,10 +151,8 @@
       const response = await fetch(`${API_URL}/chat/status`, { signal: AbortSignal.timeout(4000) });
       if (!response.ok) throw new Error("status failed");
       const status = await response.json();
-      statusNode.classList.add(status.available && status.model_installed ? "online" : "offline");
-      statusNode.textContent = status.available
-        ? (status.model_installed ? currentCopy().online : currentCopy().missing)
-        : currentCopy().offline;
+      statusNode.classList.add(status.available ? "online" : "fallback");
+      statusNode.textContent = status.available ? currentCopy().online : currentCopy().fallbackStatus;
     } catch (error) {
       statusNode.classList.add("fallback");
       statusNode.textContent = currentCopy().fallbackStatus;

@@ -32,22 +32,22 @@ Open:
 - `GET /chat/status`
 - `POST /chat/message`
 
-## Ollama assistant
+## Gemini assistant
 
-Install Ollama, then pull the configured model and start the local service:
+Create `ava-backend/.env` from `.env.example`, then add a newly generated Gemini API key:
 
-```powershell
-ollama pull llama3.2:3b
-ollama serve
+```env
+GEMINI_API_KEY=your_new_server_key
 ```
 
-The default backend connection is `http://127.0.0.1:11434`. Change `OLLAMA_URL` and
-`OLLAMA_MODEL` in `.env` when required. The website calls FastAPI, not Ollama directly.
+Never put this key in HTML, JavaScript, Git, or `window.AVA_API_URL`. The browser calls
+FastAPI and FastAPI calls Gemini, so the secret stays on the server. Change
+`GEMINI_MODEL` in `.env` if you need another supported model.
 
 For the public website, deploy FastAPI over HTTPS and set `window.AVA_API_URL` to that URL.
-Visitors cannot connect to an Ollama instance running only on your personal computer.
+The public backend must keep `GEMINI_API_KEY` in its server environment.
 
-After the first setup, start the complete local stack with:
+After the first setup, start FastAPI with:
 
 ```powershell
 .\start-local.ps1
