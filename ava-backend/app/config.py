@@ -13,6 +13,8 @@ class Settings(BaseSettings):
         "http://localhost:3000",
         "http://127.0.0.1:5500",
         "https://avaintelligent.info",
+        "https://www.avaintelligent.info",
+        "https://ansarymohammad-pixel.github.io",
     ]
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")

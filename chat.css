@@ -99,6 +99,7 @@
 
 .ava-chat-status.online::before { background: #1f9d68; }
 .ava-chat-status.offline::before { background: #d9404f; }
+.ava-chat-status.fallback::before { background: #f2b84b; }
 
 .ava-chat-message {
   max-width: 88%;
