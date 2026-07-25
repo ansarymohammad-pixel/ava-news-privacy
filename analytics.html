@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tableau de bord analytics AVA pour suivre les vues quotidiennes du site." />
+  <title>Analytics - AVA Intelligence</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./chat.css?v=20260725" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./index.html"><span class="brand-mark">AVA</span><span>AVA Intelligence</span></a>
+      <nav class="nav-links" aria-label="Navigation principale">
+        <div class="language-switcher" aria-label="Choix de langue">
+          <label class="sr-only" for="language-select">Langue</label>
+          <select id="language-select" data-language-select>
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">AVA Analytics</p>
+        <h1>Combien de personnes regardent le site chaque jour.</h1>
+        <p>Un compteur simple pour suivre les pages vues et les visiteurs approximatifs par jour, sans cookies et sans stocker l'adresse IP brute.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="analytics-summary">
+          <article><span>Pages vues</span><strong data-total-views>0</strong></article>
+          <article><span>Visiteurs approx.</span><strong data-total-visitors>0</strong></article>
+        </div>
+        <div class="chart-panel analytics-panel">
+          <div class="chart-head">
+            <h3>Vues par jour</h3>
+            <span>14 derniers jours</span>
+          </div>
+          <div class="analytics-chart" data-analytics-chart></div>
+          <p class="form-status" data-analytics-status>Chargement des donnees analytics...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid"></div>
+  </footer>
+  <script src="./site-data.js?v=20260725"></script>
+  <script src="./site-layout.js?v=20260725"></script>
+  <script src="./network-background.js"></script>
+  <script src="./analytics-dashboard.js?v=20260725"></script>
+  <script src="./chat-widget.js?v=20260725"></script>
+  <script src="./i18n.js?v=20260725"></script>
+</body>
+</html>

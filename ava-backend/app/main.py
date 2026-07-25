@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import chat, electricity, fuel, news, waitlist
+from app.api import analytics, chat, electricity, fuel, news, waitlist
 from app.config import settings
 
 app = FastAPI(
@@ -23,6 +23,7 @@ app.include_router(fuel.router, prefix="/fuel", tags=["fuel"])
 app.include_router(electricity.router, prefix="/electricity", tags=["electricity"])
 app.include_router(chat.router, prefix="/chat", tags=["chat"])
 app.include_router(waitlist.router, prefix="/waitlist", tags=["waitlist"])
+app.include_router(analytics.router, prefix="/analytics", tags=["analytics"])
 
 
 @app.get("/health")

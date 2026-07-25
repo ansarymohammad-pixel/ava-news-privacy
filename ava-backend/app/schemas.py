@@ -110,3 +110,27 @@ class MindMatchWaitlistRequest(BaseModel):
 class MindMatchWaitlistResponse(BaseModel):
     status: Literal["ok"]
     message: str
+
+
+class AnalyticsVisitRequest(BaseModel):
+    page: str = Field(min_length=1, max_length=160)
+    title: str = Field(default="", max_length=180)
+    referrer: str = Field(default="", max_length=300)
+    language: Literal["fr", "en", "es"] = "fr"
+    traffic_source: str = Field(default="direct", max_length=120)
+
+
+class AnalyticsVisitResponse(BaseModel):
+    status: Literal["ok"]
+
+
+class AnalyticsDailyPoint(BaseModel):
+    date: str
+    page_views: int
+    unique_visitors: int
+
+
+class AnalyticsSummaryResponse(BaseModel):
+    days: list[AnalyticsDailyPoint]
+    total_page_views: int
+    total_unique_visitors: int
