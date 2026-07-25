@@ -302,7 +302,10 @@
       "Competences recherchees": "Skills needed",
       "Secteurs d'interet": "Industry interests",
       "Profil LinkedIn, optionnel": "LinkedIn profile, optional",
-      "J'accepte de recevoir les communications de lancement de MindMatch.": "I agree to receive launch communications about MindMatch."
+      "J'accepte de recevoir les communications de lancement de MindMatch.": "I agree to receive launch communications about MindMatch.",
+      "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.": "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.",
+      "Trouver les bonnes personnes pour construire une startup selon competences, objectifs, disponibilite et ville.": "Find the right people to build a startup based on skills, goals, availability, and city.",
+      "Rejoindre MindMatch": "Join MindMatch"
     },
     es: {
       "Accueil": "Inicio",
@@ -606,7 +609,10 @@
       "Competences recherchees": "Habilidades buscadas",
       "Secteurs d'interet": "Sectores de interes",
       "Profil LinkedIn, optionnel": "Perfil LinkedIn, opcional",
-      "J'accepte de recevoir les communications de lancement de MindMatch.": "Acepto recibir comunicaciones de lanzamiento sobre MindMatch."
+      "J'accepte de recevoir les communications de lancement de MindMatch.": "Acepto recibir comunicaciones de lanzamiento sobre MindMatch.",
+      "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.": "© 2026 AVA Intelligence. Plataforma de movilidad inteligente, IA y matching startup.",
+      "Trouver les bonnes personnes pour construire une startup selon competences, objectifs, disponibilite et ville.": "Encontrar a las personas adecuadas para construir una startup segun habilidades, objetivos, disponibilidad y ciudad.",
+      "Rejoindre MindMatch": "Unirse a MindMatch"
     }
   };
 
