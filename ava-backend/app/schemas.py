@@ -92,3 +92,21 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     answer: str
     model: str
+
+
+class MindMatchWaitlistRequest(BaseModel):
+    name: str = Field(min_length=2, max_length=120)
+    email: str = Field(min_length=5, max_length=180)
+    city: str = Field(min_length=2, max_length=120)
+    profile_type: Literal["startup_owner", "join_startup"]
+    skills_offered: str = Field(min_length=2, max_length=500)
+    skills_needed: str = Field(min_length=2, max_length=500)
+    industry_interests: str = Field(min_length=2, max_length=500)
+    linkedin_url: str = Field(default="", max_length=240)
+    consent: bool
+    traffic_source: str = Field(default="website", max_length=120)
+
+
+class MindMatchWaitlistResponse(BaseModel):
+    status: Literal["ok"]
+    message: str

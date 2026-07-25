@@ -1,5 +1,13 @@
 (function () {
-  const API_URL = (window.AVA_API_URL || "http://127.0.0.1:8000").replace(/\/$/, "");
+  function resolveApiUrl() {
+    if (window.AVA_API_URL) return window.AVA_API_URL;
+    if (location.hostname === "avaintelligent.info" || location.hostname === "www.avaintelligent.info") {
+      return "https://api.avaintelligent.info";
+    }
+    return "http://127.0.0.1:8000";
+  }
+
+  const API_URL = resolveApiUrl().replace(/\/$/, "");
   const copy = {
     fr: {
       subtitle: "Assistant IA AVA",
