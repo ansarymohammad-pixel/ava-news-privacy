@@ -4,14 +4,15 @@
 
   const status = document.querySelector("[data-mindmatch-status]");
   function resolveApiUrl() {
-    if (window.AVA_API_URL) return window.AVA_API_URL;
+    if (window.MINDMATCH_API_URL) return window.MINDMATCH_API_URL;
     if (location.hostname === "avaintelligent.info" || location.hostname === "www.avaintelligent.info") {
-      return "https://api.avaintelligent.info";
+      return "https://mindmatch-api.avaintelligent.info";
     }
-    return "http://127.0.0.1:8000";
+    return "http://127.0.0.1:8010";
   }
 
   const apiBase = resolveApiUrl().replace(/\/$/, "");
+  const waitlistPath = window.MINDMATCH_WAITLIST_PATH || "/waitlist/mindmatch";
 
   function track(eventName, data) {
     window.dataLayer = window.dataLayer || [];
@@ -39,7 +40,7 @@
     status.dataset.state = "loading";
 
     try {
-      const response = await fetch(`${apiBase}/waitlist/mindmatch`, {
+      const response = await fetch(`${apiBase}${waitlistPath}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
@@ -57,7 +58,7 @@
         city: payload.city,
       });
     } catch (error) {
-      status.textContent = "Le serveur waitlist n'est pas encore disponible. Contactez support@avaintelligent.info ou reessayez apres le deploiement API.";
+      status.textContent = "Le serveur MindMatch est disponible, mais l'inscription waitlist doit etre activee cote API. Contactez support@avaintelligent.info ou reessayez plus tard.";
       status.dataset.state = "error";
     }
   });
