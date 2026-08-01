@@ -148,6 +148,31 @@
       </div>
     </section>
 
+    <section class="dashboard-showcase" id="live-dashboard" aria-labelledby="live-dashboard-title">
+      <div class="container">
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">Dashboard dynamique</p>
+            <h2 id="live-dashboard-title">Une vue active pour suivre les signaux AVA.</h2>
+            <p>Chaque carte peut venir du backend FastAPI: prix, impact news, demandes MindMatch et recommandations actualisees.</p>
+          </div>
+          <div class="dashboard-actions" aria-label="Filtres dashboard AVA">
+            <button class="dashboard-filter active" type="button" data-dashboard-filter="all">Tout</button>
+            <button class="dashboard-filter" type="button" data-dashboard-filter="mobility">Mobilite</button>
+            <button class="dashboard-filter" type="button" data-dashboard-filter="energy">Energie</button>
+            <button class="dashboard-filter" type="button" data-dashboard-filter="startup">Startup</button>
+          </div>
+        </div>
+
+        <div class="dashboard-stage" data-dashboard-stage aria-live="polite"></div>
+
+        <div class="dashboard-bottom">
+          <div class="dashboard-kpis" data-dashboard-kpis></div>
+          <a class="button primary" href="./analytics.html">Ouvrir le dashboard analytics</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section alt">
       <div class="container ecosystem-preview">
         <div class="section-head">
@@ -214,6 +239,7 @@
   </footer>
   <script src="./site-data.js?v=20260725"></script>
   <script src="./site-layout.js?v=20260725"></script>
+  <script src="./ava-dashboard.js?v=20260801"></script>
   <script src="./network-background.js"></script>
   <script src="./analytics-tracker.js?v=20260801"></script>
   <script src="./chat-widget.js?v=20260725"></script>
