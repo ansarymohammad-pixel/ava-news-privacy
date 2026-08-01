@@ -118,6 +118,9 @@ class AnalyticsVisitRequest(BaseModel):
     referrer: str = Field(default="", max_length=300)
     language: Literal["fr", "en", "es"] = "fr"
     traffic_source: str = Field(default="direct", max_length=120)
+    visitor_id: str = Field(default="", max_length=120)
+    session_id: str = Field(default="", max_length=120)
+    screen_size: str = Field(default="", max_length=40)
 
 
 class AnalyticsVisitResponse(BaseModel):

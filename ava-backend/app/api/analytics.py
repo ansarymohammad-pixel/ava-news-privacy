@@ -18,7 +18,10 @@ router = APIRouter()
 ANALYTICS_PATH = Path("data/analytics_events.jsonl")
 
 
-def _visitor_hash(request: Request, day: str) -> str:
+def _visitor_hash(request: Request, payload: AnalyticsVisitRequest, day: str) -> str:
+    if payload.visitor_id:
+        return hashlib.sha256(payload.visitor_id.encode("utf-8")).hexdigest()[:24]
+
     host = request.client.host if request.client else "unknown"
     user_agent = request.headers.get("user-agent", "")
     source = f"{host}|{user_agent}|{day}"
@@ -31,7 +34,7 @@ def record_visit(payload: AnalyticsVisitRequest, request: Request) -> AnalyticsV
     event = payload.model_dump()
     event["created_at"] = now.isoformat()
     event["date"] = now.date().isoformat()
-    event["visitor_hash"] = _visitor_hash(request, event["date"])
+    event["visitor_hash"] = _visitor_hash(request, payload, event["date"])
 
     ANALYTICS_PATH.parent.mkdir(parents=True, exist_ok=True)
     with ANALYTICS_PATH.open("a", encoding="utf-8") as file:
