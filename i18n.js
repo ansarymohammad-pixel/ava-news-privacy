@@ -3,6 +3,10 @@
     en: {
       "Accueil": "Home",
       "Confidentialite": "Privacy",
+      "Contact": "Contact",
+      "Analytics": "Analytics",
+      "AVA Ecosystem": "AVA Ecosystem",
+      "AVA News Verify": "AVA News Verify",
       "Choix de langue": "Language choice",
       "Langue": "Language",
       "Navigation principale": "Main navigation",
@@ -36,6 +40,7 @@
       "Voir AVA Parking": "View AVA Parking",
       "Evaluer la credibilite d'une information avec un score IA et une lecture rhetorique.": "Evaluate the credibility of information with an AI score and rhetorical analysis.",
       "Score credibilite": "Credibility score",
+      "Transparence des sources": "Source transparency",
       "Source transparency": "Source transparency",
       "Detection rhetorique": "Rhetorical detection",
       "Voir AVA News": "View AVA News",
@@ -305,11 +310,19 @@
       "J'accepte de recevoir les communications de lancement de MindMatch.": "I agree to receive launch communications about MindMatch.",
       "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.": "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.",
       "Trouver les bonnes personnes pour construire une startup selon competences, objectifs, disponibilite et ville.": "Find the right people to build a startup based on skills, goals, availability, and city.",
+      "(c) 2026 AVA Intelligence. Plateforme smart mobility, IA et matching startup.": "(c) 2026 AVA Intelligence. Smart mobility, AI, and startup matching platform.",
+      "Matching fondateur-talent": "Founder-to-talent matching",
+      "Liste Early Access": "Early-access waitlist",
+      "Decouverte d'equipe startup": "Startup team discovery",
       "Rejoindre MindMatch": "Join MindMatch"
     },
     es: {
       "Accueil": "Inicio",
       "Confidentialite": "Privacidad",
+      "Contact": "Contacto",
+      "Analytics": "Analiticas",
+      "AVA Ecosystem": "Ecosistema AVA",
+      "AVA News Verify": "AVA News Verify",
       "Choix de langue": "Eleccion de idioma",
       "Langue": "Idioma",
       "Navigation principale": "Navegacion principal",
@@ -343,6 +356,7 @@
       "Voir AVA Parking": "Ver AVA Parking",
       "Evaluer la credibilite d'une information avec un score IA et une lecture rhetorique.": "Evaluar la credibilidad de una informacion con una puntuacion de IA y un analisis retorico.",
       "Score credibilite": "Puntuacion de credibilidad",
+      "Transparence des sources": "Transparencia de fuentes",
       "Source transparency": "Transparencia de fuente",
       "Detection rhetorique": "Deteccion retorica",
       "Voir AVA News": "Ver AVA News",
@@ -612,6 +626,10 @@
       "J'accepte de recevoir les communications de lancement de MindMatch.": "Acepto recibir comunicaciones de lanzamiento sobre MindMatch.",
       "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform.": "© 2026 AVA Intelligence. Plataforma de movilidad inteligente, IA y matching startup.",
       "Trouver les bonnes personnes pour construire une startup selon competences, objectifs, disponibilite et ville.": "Encontrar a las personas adecuadas para construir una startup segun habilidades, objetivos, disponibilidad y ciudad.",
+      "(c) 2026 AVA Intelligence. Plateforme smart mobility, IA et matching startup.": "(c) 2026 AVA Intelligence. Plataforma de movilidad inteligente, IA y matching startup.",
+      "Matching fondateur-talent": "Matching fundador-talento",
+      "Liste Early Access": "Lista Early Access",
+      "Decouverte d'equipe startup": "Descubrimiento de equipo startup",
       "Rejoindre MindMatch": "Unirse a MindMatch"
     }
   };

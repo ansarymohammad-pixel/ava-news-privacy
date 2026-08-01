@@ -4,7 +4,7 @@
       label: "AVA Intelligence",
       mark: "AVA",
       homeUrl: "./index.html",
-      footer: "© 2026 AVA Intelligence. Smart Mobility, AI and startup matching platform."
+      footer: "(c) 2026 AVA Intelligence. Plateforme smart mobility, IA et matching startup."
     },
     nav: [
       { label: "Accueil", href: "./index.html", match: ["", "index.html"] },
@@ -26,7 +26,7 @@
       {
         name: "AVA Fuel",
         logoClass: "fuel-logo",
-        logoText: "€",
+        logoText: "EUR",
         description: "Comparer les prix carburant, voir les stations sur carte et anticiper les variations locales.",
         features: ["Prix en temps reel", "Cartes stations", "Prediction prix"],
         href: "./fuel.html",
@@ -55,7 +55,7 @@
         logoClass: "news-logo",
         logoText: "AVA",
         description: "Evaluer la credibilite d'une information avec un score IA et une lecture rhetorique.",
-        features: ["Score credibilite", "Source transparency", "Detection rhetorique"],
+        features: ["Score credibilite", "Transparence des sources", "Detection rhetorique"],
         href: "./news.html",
         cta: "Voir AVA News"
       },
@@ -64,7 +64,7 @@
         logoClass: "mindmatch-logo",
         logoText: "MM",
         description: "Trouver les bonnes personnes pour construire une startup selon competences, objectifs, disponibilite et ville.",
-        features: ["Founder-to-talent matching", "Early-access waitlist", "Startup team discovery"],
+        features: ["Matching fondateur-talent", "Liste Early Access", "Decouverte d'equipe startup"],
         href: "./mindmatch.html",
         cta: "Rejoindre MindMatch"
       }
