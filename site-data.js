@@ -20,6 +20,7 @@
       { label: "Confidentialite", href: "./privacy.html" },
       { label: "Contact", href: "./contact.html" },
       { label: "MindMatch", href: "./mindmatch.html" },
+      { label: "Child Safety", href: "./mindmatch/child-safety/" },
       { label: "Analytics", href: "./analytics.html" }
     ],
     products: [
