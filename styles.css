@@ -251,6 +251,31 @@ main,
   margin-top: 28px;
 }
 
+.hero-utility-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.hero-utility-links a {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+  font-weight: 850;
+}
+
+.hero-utility-links a:hover {
+  color: var(--primary-dark);
+  background: #ffffff;
+}
+
 .hero-points {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
