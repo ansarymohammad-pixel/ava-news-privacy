@@ -1,0 +1,67 @@
+import { type CSSProperties } from "react";
+import { type Product } from "../content";
+import {
+  ArrowUpRight,
+  Fuel,
+  Zap,
+  SquareParking,
+  Newspaper,
+  Users,
+} from "lucide-react";
+import { motion } from "motion/react";
+import { usePreferences } from "../Preferences";
+import { groups, languages } from "../content";
+const icons = {
+  fuel: Fuel,
+  energy: Zap,
+  parking: SquareParking,
+  news: Newspaper,
+  people: Users,
+};
+export default function ApplicationCard({
+  product,
+  index,
+}: {
+  product: Product;
+  index: number;
+}) {
+  const { language, t } = usePreferences();
+  const Icon = icons[product.icon];
+  return (
+    <motion.article
+      layout
+      className="app-card"
+      style={{ "--app-accent": product.color } as CSSProperties}
+    >
+      <div className="card-top">
+        <span className="app-icon">
+          <Icon size={24} />
+        </span>
+        <span className="card-number">/0{index + 1}</span>
+      </div>
+      <span className="category">
+        {t.groups[groups.indexOf(product.group)]}
+      </span>
+      <h3>{product.name}</h3>
+      <p>{product.text[languages.indexOf(language)]}</p>
+      <a
+        className="card-link"
+        href={product.path}
+        aria-label={t.open + " " + product.name}
+      >
+        {t.open}
+        <ArrowUpRight size={19} />
+      </a>
+      <a
+        className="store-link"
+        href={product.storeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={t.store + " — " + product.name}
+      >
+        {t.store}
+        <ArrowUpRight size={16} />
+      </a>
+    </motion.article>
+  );
+}

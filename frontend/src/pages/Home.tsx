@@ -1,0 +1,157 @@
+import PreviewBoundary from "../components/PreviewBoundary";
+import { lazy, Suspense, useState } from "react";
+import { motion } from "motion/react";
+import {
+  ArrowUpRight,
+  ArrowDown,
+  ArrowRight,
+  Layers,
+  Compass,
+  ScanLine,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { products, groups } from "../content";
+import { usePreferences } from "../Preferences";
+import ApplicationCard from "../components/ApplicationCard";
+const SignalChart = lazy(() => import("../components/SignalChart"));
+export default function Home() {
+  const { t } = usePreferences();
+  const [filter, setFilter] = useState("all");
+  const visible = products.filter(
+    (p) => filter === "all" || p.group === filter,
+  );
+  return (
+    <>
+      <section className="hero">
+        <div className="shell hero-grid">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="eyebrow">
+              <span className="tiny-square" />
+              {t.eyebrow}
+            </p>
+            <h1>
+              {t.headline}
+              <span>{t.headline2}</span>
+            </h1>
+            <p className="hero-intro">{t.intro}</p>
+            <div className="hero-actions">
+              <Link to="/#applications" className="button-primary">
+                {t.explore}
+                <ArrowUpRight size={20} />
+              </Link>
+              <Link to="/#approach" className="button-text">
+                {t.approach}
+                <ArrowRight size={17} />
+              </Link>
+            </div>
+            <div className="hero-note">
+              <span className="stacked-marks">
+                <Layers size={15} />
+                <Compass size={15} />
+                <ScanLine size={15} />
+              </span>
+              {t.heroNote}
+            </div>
+          </motion.div>
+          <div className="hero-visual">
+            <div className="visual-topline">
+              <span>AVA / INTELLIGENCE</span>
+              <span>01 — 05</span>
+            </div>
+            <PreviewBoundary message={t.previewError} retry={t.previewRetry}>
+              <Suspense
+                fallback={
+                  <div
+                    className="chart-placeholder"
+                    role="status"
+                    aria-live="polite"
+                  >
+                    {t.loading}…
+                  </div>
+                }
+              >
+                <SignalChart />
+              </Suspense>
+            </PreviewBoundary>
+            <div className="visual-footnote">
+              <span>{t.chartTitle}</span>
+              <ArrowDown size={18} />
+            </div>
+          </div>
+        </div>
+        <div className="shell ecosystem-strip">
+          {products.map((p) => (
+            <a key={p.id} href={p.path}>
+              {p.name}
+              <ArrowUpRight size={14} />
+            </a>
+          ))}
+        </div>
+      </section>
+      <section id="applications" className="section shell">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">{t.ecosystem}</p>
+            <h2>{t.appsTitle}</h2>
+          </div>
+          <p>{t.appsBody}</p>
+        </div>
+        <div className="filters" role="group" aria-label={t.nav[0]}>
+          {["all", ...groups].map((id, i) => (
+            <button
+              key={id}
+              aria-pressed={filter === id}
+              onClick={() => setFilter(id)}
+            >
+              {i === 0 ? t.all : t.groups[i - 1]}
+            </button>
+          ))}
+        </div>
+        <motion.div layout className="apps-grid">
+          {visible.map((p) => (
+            <ApplicationCard
+              key={p.id}
+              product={p}
+              index={products.indexOf(p)}
+            />
+          ))}
+        </motion.div>
+      </section>
+      <section id="approach" className="approach section">
+        <div className="shell">
+          <div className="section-heading">
+            <div>
+              <p className="eyebrow">{t.method}</p>
+              <h2>{t.methodTitle}</h2>
+            </div>
+            <p>{t.chartBody}</p>
+          </div>
+          <div className="steps-grid">
+            {t.steps.map(([title, body], i) => (
+              <article key={title}>
+                <span className="step-number">0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="shell contact-section">
+        <div>
+          <p className="eyebrow">AVA / CONNECT</p>
+          <h2>{t.cta}</h2>
+          <p>{t.ctaBody}</p>
+        </div>
+        <Link to="/contact" className="button-primary">
+          {t.contact}
+          <ArrowUpRight size={20} />
+        </Link>
+      </section>
+    </>
+  );
+}
