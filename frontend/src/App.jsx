@@ -1,0 +1,4 @@
+import {useEffect} from 'react';import {HashRouter,Routes,Route,Link,useLocation} from 'react-router-dom';import {MotionConfig} from 'motion/react';import Layout from './components/Layout';import Home from './pages/Home';import {Preferences,usePreferences} from './Preferences';
+function ScrollManager(){const {pathname,hash}=useLocation();useEffect(()=>{if(hash)document.getElementById(hash.slice(1))?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});else window.scrollTo(0,0);},[pathname,hash]);return null;}
+function NotFound(){const {t}=usePreferences();return <div className="shell section"><h1>{t.notfound}</h1><Link to="/">{t.home}</Link></div>;}
+export default function App(){return <Preferences><MotionConfig reducedMotion="user"><HashRouter><ScrollManager/><Layout><Routes><Route path="/" element={<Home/>}/><Route path="*" element={<NotFound/>}/></Routes></Layout></HashRouter></MotionConfig></Preferences>;}
